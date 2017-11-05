@@ -1,3 +1,5 @@
+@import 'colors';
+
 html {
     box-sizing: border-box;
 }
@@ -8,7 +10,7 @@ html {
 
 body {
 	-webkit-font-smoothing: antialiased;
-    background-color: #fad;
+    background-color: $blue;
     width: 100%;
 }
 

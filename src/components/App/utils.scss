@@ -1,0 +1,45 @@
+/**
+ * utility mixins.
+ */
+
+@mixin clearfix {
+
+    &:after,
+    &:before {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin selection {
+    &::selection {
+        color: $black;
+        background-color: $yellow;
+    }
+
+    &::-moz-selection {
+        background-color: $yellow;
+    }
+}
+
+@mixin align-right {
+    float: none;
+    padding: $page_space 0;
+
+    @media #{$grid_md_up} {
+        float: right;
+        padding: 0 0 0 20px;
+    }
+}
+
+@mixin align-left {
+    float: none;
+    padding: $page_space 0;
+
+    @media #{$grid_md_up} {
+        float: left;
+        padding: 0 20px 0 0;
+    }
+}
+

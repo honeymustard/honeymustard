@@ -1,0 +1,116 @@
+/**
+ * generic content lists.
+ */
+
+.list-regular {
+    padding: 0;
+
+    ul > li {
+        padding: 0 0 20px;
+    }
+
+    h3 {
+        @include font-sub-header;
+        margin: 0;
+    }
+}
+
+.lists {
+    padding: 0;
+
+    .list-group {
+        @include clearfix;
+        padding: $page_space 0;
+    }
+
+    .list-title {
+        @include font-sub-header;
+        margin: 0;
+    }
+
+    .list-col-1 {
+        float: left;
+        width: 80%
+    }
+
+    .list-col-2 {
+        float: left;
+        width: 20%
+    }
+
+    .list-info {
+
+    }
+
+    .list-image {
+        margin: 10px 0;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .list-lead {
+        color: $white;
+        margin: 0 0 10px;
+        padding-right: 25px;
+        position: relative;
+    }
+
+    .list-trigger {
+        background-color: $white;
+        color: $blue;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        height: 18px;
+        line-height: 18px;
+        position: absolute;
+        right: 3px;
+        text-align: center;
+        top: 3px;
+        width: 18px;
+
+        &:focus,
+        &:hover {
+            background-color: $yellow;
+            color: $black;
+            outline: 0;
+        }
+    }
+
+    .list-triggee {
+        max-height: 0;
+        overflow: hidden;
+
+        &.list-close {
+            max-height: 0;
+            transition: max-height .2s ease-out;
+        }
+
+        &.list-open {
+            max-height: 999px;
+            transition: max-height .6s ease-in;
+        }
+    }
+
+    .list-tech {
+        @include clearfix;
+        margin: 0 -3px;
+        padding-right: 40px;
+
+        li {
+            @include font-normal;
+            display: inline-block;
+            float: left;
+            font-size: 14px;
+            padding: 2px 7px;
+            margin: 3px;
+            line-height: 18px;
+            background-color: $pink;
+            border: 1px solid $black;
+            color: $black;
+        }
+    }
+}
+

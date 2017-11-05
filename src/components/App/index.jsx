@@ -5,7 +5,7 @@ import Head from 'components/Head';
 import Foot from 'components/Foot';
 
 import 'normalize.css';
-import 'components/App/App.scss';
+import 'components/App/app.scss';
 
 /**
  * The core App component.
