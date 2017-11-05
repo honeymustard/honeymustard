@@ -17,10 +17,23 @@ module.exports = {
             {
                 test: /\.(css|scss)$/,
                 use: [
-                    {loader: 'style-loader'},
-                    {loader: 'css-loader'},
-                    {loader: 'sass-loader'}
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: ['src']
+                        }
+                    }
                 ]
+            },
+            {
+                test: /\.(png|svg)$/,
+                loader: 'file-loader'
             }
         ]
     },
