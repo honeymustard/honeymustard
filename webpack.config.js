@@ -43,5 +43,12 @@ module.exports = {
             path.resolve('./node_modules')
         ],
         extensions: ['.js', '.jsx']
+    },
+    devServer: {
+        progress: true,
+        inline: true,
+        proxy: {
+            "**": "http://localhost:3000"
+        }
     }
 }
