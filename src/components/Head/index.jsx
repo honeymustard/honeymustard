@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import 'components/Head/head.scss';
 
@@ -33,7 +34,8 @@ class Head extends React.Component {
 
                   <div className="menu-triggee">
                       <ul className="menu-list">
-                          <li><a href="/">link</a></li>
+                          <li><Link to="/">Home</Link></li>
+                          <li><Link to="/horse">Horse</Link></li>
                       </ul>
                   </div>
                 </nav>
