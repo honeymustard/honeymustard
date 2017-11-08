@@ -10,7 +10,7 @@ class LayoutHorse extends React.Component {
         return (
             <div className="layout">
                 <Head />
-                HORSE!
+                Horse of course!
                 <Foot />
             </div>
         );
