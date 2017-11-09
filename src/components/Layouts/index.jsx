@@ -23,7 +23,7 @@ class Layout extends React.Component {
         return (
             <div className="layout">
                 <Head />
-                <Main />
+                <Main {...this.props} />
                 <Foot />
             </div>
         );
