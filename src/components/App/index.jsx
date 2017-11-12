@@ -1,6 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout, LayoutHorse } from 'components/Layouts';
+import { Index, Missing } from 'components/Pages';
 
 import 'normalize.css';
 import 'components/App/app.scss';
@@ -12,10 +13,12 @@ class App extends React.Component {
 
     render() {
         return (
-            <Switch>
-                <Route exact path="/" component={Layout} />
-                <Route exact path="/horse" component={LayoutHorse} />
-            </Switch>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Index} />
+                    <Route path="*" component={Missing} />
+                </Switch>
+            </Router>
         );
     }
 };
