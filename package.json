@@ -8,8 +8,9 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
-    "start": "webpack-dev-server --hot --port 4343",
-    "serve:dev": "nodemon ./server.js"
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "watch:server": "nodemon ./server.js",
+    "watch:build": "webpack-dev-server --hot --port 4343"
   },
   "dependencies": {
     "express": "^4.16.2",
@@ -31,6 +32,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "npm-run-all": "^4.1.2"
   }
 }
