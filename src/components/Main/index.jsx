@@ -4,7 +4,9 @@ class Main extends React.Component {
 
     render() {
         return (
-            <main className="main">#Main</main>
+            <main className="main">
+                {this.props.children}
+            </main>
         );
     }
 };
