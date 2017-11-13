@@ -1,14 +1,9 @@
 import React from 'react';
 
-class Foot extends React.Component {
-
-    render() {
-        return (
-            <footer className="foot">
-                #Foot
-            </footer>
-        );
-    }
-};
+const Foot = (props) => (
+    <footer className="foot">
+        {props.children}
+    </footer>
+);
 
 export default Foot;

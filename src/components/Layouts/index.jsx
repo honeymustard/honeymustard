@@ -1,33 +1,14 @@
 import React from 'react';
-
 import Head from 'components/Head';
-import Main from 'components/Main';
 import Foot from 'components/Foot';
+import Main from 'components/Main';
 
-class LayoutHorse extends React.Component {
+const Layout = (props) => (
+    <div className="layout">
+        <Head />
+        <Main {...props} />
+        <Foot />
+    </div>
+);
 
-    render() {
-        return (
-            <div className="layout">
-                <Head />
-                Horse of course!
-                <Foot />
-            </div>
-        );
-    }
-};
-
-class Layout extends React.Component {
-
-    render() {
-        return (
-            <div className="layout">
-                <Head />
-                <Main {...this.props} />
-                <Foot />
-            </div>
-        );
-    }
-};
-
-export { Layout, LayoutHorse };
+export { Layout };
