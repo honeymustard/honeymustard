@@ -19,7 +19,17 @@ var job = new mongoose.Schema({
     technologies: {
         type: [String],
     },
-    logo: String,
+    url: {
+        type: String,
+        required: true,
+    },
+    tagline: {
+        type: String,
+        required: true,
+    },
+    description: String,
+    city: String,
+    country: String,
 });
 
 job.pre('save', (next) => {
