@@ -38,7 +38,7 @@
 
     &.menu-open {
         .menu-trigger {
-            background-image: url('./anti-burger.svg');
+            background-image: url('/static/anti-burger.svg');
         }
 
         .menu-triggee {
@@ -51,7 +51,7 @@
         width: 24px;
         height: 22px;
         border: 0;
-        background-image: url('./burger.svg');
+        background-image: url('/static/burger.svg');
         background-repeat: no-repeat;
         background-size: 22px 22px;
         outline: 0;

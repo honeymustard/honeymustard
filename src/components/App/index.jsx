@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Layout, LayoutHorse } from 'components/Layouts';
+import { Layout } from 'components/Layouts';
 import { Index, Missing } from 'components/Pages';
+import JobArchive from 'components/Archives/jobArchive';
 
 import 'normalize.css';
 import 'components/App/app.scss';
@@ -16,6 +17,7 @@ class App extends React.Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Index} />
+                    <Route exact path="/jobs" component={JobArchive} />
                     <Route path="*" component={Missing} />
                 </Switch>
             </Router>
