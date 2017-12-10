@@ -13,10 +13,11 @@ mongoose.Promise = global.Promise;
 /* Serve data from api */
 app.use('/api', api);
 
-/* Serve all files from dist folder */
+/* Serve files */
+app.use('/static', express.static(path.join(__dirname, '/static')));
 app.use('/dist', express.static(path.join(__dirname, '/dist')));
 
-/* The frontend will handle other requests */
+/* Pass all requests to index */
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
