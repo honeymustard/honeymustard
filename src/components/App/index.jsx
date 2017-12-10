@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'components/Layouts';
-import { Index, Missing } from 'components/Pages';
+import { IndexPage, MissingPage } from 'components/Pages';
 import JobArchive from 'components/Archives/jobArchive';
 
 import 'normalize.css';
@@ -16,9 +16,9 @@ class App extends React.Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" component={Index} />
+                    <Route exact path="/" component={IndexPage} />
                     <Route exact path="/jobs" component={JobArchive} />
-                    <Route path="*" component={Missing} />
+                    <Route path="*" component={MissingPage} />
                 </Switch>
             </Router>
         );
