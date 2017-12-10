@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
 var project = new mongoose.Schema({
-    created: Date,
-    modified: Date,
+    updatedAt: Date,
     title: {
         type: String,
         required: true,
@@ -26,15 +25,8 @@ var project = new mongoose.Schema({
     description: String,
 });
 
-project.pre('save', (next) => {
-
-    var now = Date();
-    this.modified = now;
-
-    if (!this.created) {
-        this.created = now;
-    }
-
+project.pre('save', function (next) {
+    this.updatedAt = Date();
     next();
 });
 
