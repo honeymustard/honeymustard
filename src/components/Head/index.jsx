@@ -13,34 +13,40 @@ class Head extends React.Component {
         };
     }
 
-    buttonClick(e) {
+    toggle() {
         this.setState({open: !this.state.open});
     }
 
-    toggleClass(state) {
-        return state.open ? 'menu-open' : '';
+    close() {
+        this.setState({open: false});
+    }
+
+    keyUp(e) {
+        if (e.keyCode === 27) {
+            this.close();
+        }
     }
 
     render() {
         return (
-            <header className="head">
-              <div className="area">
-                <nav className={'menu ' + this.toggleClass(this.state)}>
-                  <div id="logo">
-                    <img src="/" />
-                  </div>
+          <header className="head" onKeyUp={this.keyUp.bind(this)}>
+            <div className="area">
+              <nav className={'menu ' + (this.state.open ? 'is-open' : 'is-closed')}>
+                <div id="logo">
+                  <img src="/static/honeymustard.svg" />
+                </div>
 
-                  <button onClick={this.buttonClick.bind(this)} className="menu-trigger"></button>
+                <button onClick={this.toggle.bind(this)} className="menu-trigger"></button>
 
-                  <div className="menu-triggee">
-                      <ul className="menu-list">
-                          <li><Link to="/">Home</Link></li>
-                          <li><Link to="/jobs/">Jobs</Link></li>
-                      </ul>
-                  </div>
-                </nav>
-              </div>
-            </header>
+                <div className="menu-triggee">
+                  <ul className="menu-list">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/jobs/">Jobs</Link></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </header>
         );
     }
 };
