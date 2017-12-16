@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Layout } from 'components/Layouts';
-import { IndexPage, MissingPage } from 'components/Pages';
-import Archive from 'containers/Archive';
-import JobItem from 'components/Items/JobItem';
+import { IndexPage, JobsPage, MissingPage } from 'components/Pages';
 
 import 'normalize.css';
 import 'components/App/app.scss';
@@ -18,11 +15,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={IndexPage} />
-          <Route exact path="/jobs">
-            <Layout>
-              <Archive route="/api/jobs" component={JobItem} />
-            </Layout>
-          </Route>
+          <Route exact path="/jobs" component={JobsPage} />
           <Route path="*" component={MissingPage} />
         </Switch>
       </Router>
