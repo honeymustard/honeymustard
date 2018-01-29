@@ -1,14 +1,26 @@
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var api = require('./src/server/routes');
 var app = express();
 
 mongoose.connect('mongodb://honeymustard:43ApplTree@ds127126.mlab.com:27126/honeymustard', {
-    useMongoClient: true
+  useMongoClient: true
 });
 
 mongoose.Promise = global.Promise;
+
+/* Use sessions */
+app.use(session({
+  secret: 'Oatmeal Sandwich',
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+  }),
+}));
 
 /* Serve data from api */
 app.use('/api', api);
