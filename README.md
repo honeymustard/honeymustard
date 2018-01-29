@@ -12,4 +12,4 @@ yarn clean  # clean built files
 
 ## Copyright
 
-Copyright &copy 2017 Adrian Solumsmo
+Copyright &copy 2017-2018 Adrian Solumsmo
