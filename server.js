@@ -3,7 +3,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var api = require('./src/server/routes');
+var routes = require('./src/server/routes');
 var app = express();
 
 mongoose.connect('mongodb://honeymustard:43ApplTree@ds127126.mlab.com:27126/honeymustard', {
@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 
 /* Use sessions */
 app.use(session({
-  secret: 'Oatmeal Sandwich',
+  secret: 'oatmeal-sandwich',
   resave: false,
   saveUninitialized: false,
   store: new MongoStore({
@@ -22,8 +22,8 @@ app.use(session({
   }),
 }));
 
-/* Serve data from api */
-app.use('/api', api);
+/* Use routes */
+app.use(routes);
 
 /* Serve files */
 app.use('/static', express.static(path.join(__dirname, '/static')));
