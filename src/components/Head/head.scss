@@ -20,11 +20,15 @@
 
     @media #{$grid-lg-up} {
         display: block;
-        min-height: 195px;
+        min-height: 200px;
     }
 
     &.has-trans {
         transition: background-color .3s;
+
+        .menu-links {
+          transition: opacity 1s;
+        }
     }
 
     &.is-open {
@@ -40,7 +44,7 @@
         }
 
         .menu-links {
-            display: block;
+            opacity: 1;
         }
     }
 }
@@ -89,7 +93,7 @@
     .menu-col-burger {
         @media #{$grid-lg-up} {
             align-items: flex-end;
-            padding-left: 60px;
+            padding-left: 20px;
         }
     }
 
@@ -132,7 +136,7 @@
     }
 
     .menu-links {
-        display: none;
+        opacity: 0;
     }
 
     .menu-list {
