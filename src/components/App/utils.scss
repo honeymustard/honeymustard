@@ -27,7 +27,7 @@
     float: none;
     padding: $page_space 0;
 
-    @media #{$grid_md_up} {
+    @media #{$grid-lg-up} {
         float: right;
         padding: 0 0 0 20px;
     }
@@ -37,7 +37,7 @@
     float: none;
     padding: $page_space 0;
 
-    @media #{$grid_md_up} {
+    @media #{$grid-lg-up} {
         float: left;
         padding: 0 20px 0 0;
     }

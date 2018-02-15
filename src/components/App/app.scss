@@ -1,18 +1,29 @@
 @import 'colors';
+@import 'grid';
 
 html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 body {
-	-webkit-font-smoothing: antialiased;
+	  -webkit-font-smoothing: antialiased;
     background-color: $blue;
-    padding-top: 50px;
+    padding-top: 60px;
     width: 100%;
+
+    @media #{$grid-lg-up} {
+        padding: 0;
+    }
+}
+
+a {
+    text-decoration: none;
 }
 
 h1,

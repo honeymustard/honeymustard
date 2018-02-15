@@ -1,2 +1,12 @@
-$grid_md_up: '(min-width: 768px)';
+$grid-gutter: 20px;
+$grid-size: 1024px;
+$grid-lg-up: '(min-width: #{$grid-size})';
 
+.grid-row {
+    margin: 0 $grid-gutter;
+
+    @media #{$grid-lg-up} {
+      margin: 0 auto;
+      max-width: $grid-size - ($grid-gutter * 2);
+    }
+}

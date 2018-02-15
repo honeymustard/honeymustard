@@ -29,23 +29,30 @@ class Head extends React.Component {
 
   render() {
     return (
-      <header className="head" onKeyUp={this.keyUp.bind(this)}>
-        <div className="area">
-          <nav className={'menu ' + (this.state.open ? 'is-open' : 'is-closed')}>
-            <div id="logo">
-              <img src="/static/honeymustard.svg" />
+      <header className={'head ' + (this.state.open ? 'is-open' : 'is-closed')} onKeyUp={this.keyUp.bind(this)}>
+        <nav className="menu grid-row">
+          <div className="menu-row">
+            <div className="menu-col menu-col-logo">
+              <img className="menu-logo" src="/static/honeymustard.svg" />
             </div>
+            <div className="menu-col menu-col-burger">
+              <button onClick={this.toggle.bind(this)} className="menu-burger"></button>
+            </div>
+          </div>
 
-            <button onClick={this.toggle.bind(this)} className="menu-trigger"></button>
-
-            <div className="menu-triggee">
+          <div className="menu-links">
+            <div className="grid-row">
               <ul className="menu-list">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/jobs/">Jobs</Link></li>
+                <li className="menu-item">
+                  <Link to="/">Home</Link>
+                </li>
+                <li className="menu-item">
+                  <Link to="/jobs/">Jobs</Link>
+                </li>
               </ul>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </header>
     );
   }

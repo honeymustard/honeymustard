@@ -3,65 +3,109 @@
 @import 'components/App/fonts.scss';
 @import 'components/App/grid.scss';
 
-.menu {
-	display: block;
+$menu-height: 60px;
+
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 5px 20px 10px;
+    height: $menu-height;
     background-color: $dark_pink;
-    height: 50px;
+
+    @media #{$grid-lg-up} {
+        background-color: initial;
+        display: block;
+        position: static;
+        height: initial;
+    }
+
+    &.is-open {
+        background-color: $dark_pink;
+        position: fixed;
+        bottom: 0;
+
+        .menu-burger {
+            background-image: url('/static/anti-burger.svg');
+        }
+
+        .menu-links {
+            display: block;
+        }
+    }
+}
+
+.menu {
+
+    @media #{$grid-lg-up} {
+        padding: 40px 0;
+    }
 
     a {
         color: $yellow;
-    
+
         &:hover,
         &:focus {
             color: $black;
         }
     }
 
-    #logo {
-        padding-right: 40px;
+    .menu-row {
+        display: flex;
+        flex-grow: 1;
+    }
 
-        a {
-            display: inline-block;
-            margin-top: 3px;
-        }
+    .menu-col {
+        display: flex;
+        align-items: center;
+    }
 
-        img {
-            height: 30px;
+    .menu-col-logo {
+        flex-grow: 1;
+    }
+
+    .menu-col-burger {
+        @media #{$grid-lg-up} {
+            align-items: flex-end;
+            padding-left: 100px;
         }
     }
 
-    &.is-open {
-        .menu-trigger {
-            background-image: url('/static/anti-burger.svg');
-        }
+    .menu-logo {
+        display: block;
+        height: 30px;
+        max-width: 100%;
 
-        .menu-triggee {
-            display: block;
+        @media #{$grid-lg-up} {
+            height: initial;
+            max-height: 120px;
         }
     }
 
-    .menu-trigger {
-		background-color: transparent;
-        width: 24px;
-        height: 22px;
+    .menu-burger {
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
         border: 0;
         background-image: url('/static/burger.svg');
         background-repeat: no-repeat;
-        background-size: 22px 22px;
+        background-size: 30px;
         outline: 0;
         padding: 0;
-        position: absolute;
-        right: 0;
-        top: 16px;
         display: block;
-        margin-right: 20px;
         user-select: none;
+
+        @media #{$grid-lg-up} {
+            background-size: 85px;
+            width: 85px;
+            height: 85px;
+            position: relative;
+            top: 4px;
+        }
 
         &:hover,
         &:focus {
@@ -69,30 +113,49 @@
         }
     }
 
-    .menu-triggee {
+    .menu-links {
         background-color: $dark_pink;
         bottom: 0;
         display: none;
         position: fixed;
-        top: 50px;
+        top: $menu-height;
         right: 0;
         left: 0;
+
+        @media #{$grid-lg-up} {
+            position: static;
+        }
     }
 
     .menu-list {
         background-color: $dark_pink;
         list-style-type: none;
-        margin: 0;
-        padding: 15px;
+        margin: 20px 0;
+        padding: 0;
         width: 100%;
+
+        @media #{$grid-lg-up} {
+            margin: 60px 0;
+        }
+    }
+
+    .menu-item {
+        margin: 0 0 6px;
+
+        @media #{$grid-lg-up} {
+            margin: 0 0 20px;
+        }
 
         a {
             @include font-header;
-            font-size: 19px;
+            font-size: 20px;
             float: none;
-            display: block;
-            margin: 0;
-            padding: 3px 0;
+            display: inline-block;
+
+            @media #{$grid-lg-up} {
+                font-size: 36px;
+                line-height: 1.2;
+            }
         }
     }
 }
