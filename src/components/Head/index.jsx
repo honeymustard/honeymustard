@@ -27,11 +27,24 @@ class Head extends React.Component {
     }
   }
 
+  openState() {
+    return this.state.open ? 'is-open' : 'is-closed'
+  }
+
+  classes() {
+    return [
+      'head',
+      this.state.open ? 'has-trans' : '',
+      this.openState(),
+    ].join(' ');
+  }
+
   render() {
     return (
-      <header className={'head ' + (this.state.open ? 'is-open' : 'is-closed')} onKeyUp={this.keyUp.bind(this)}>
-        <nav className="menu grid-row">
-          <div className="menu-row">
+      <header className={this.classes()} onKeyUp={this.keyUp.bind(this)}>
+
+        <nav className="menu">
+          <div className="grid-row menu-row menu-top">
             <div className="menu-col menu-col-logo">
               <img className="menu-logo" src="/static/honeymustard.svg" />
             </div>
@@ -40,17 +53,15 @@ class Head extends React.Component {
             </div>
           </div>
 
-          <div className="menu-links">
-            <div className="grid-row">
-              <ul className="menu-list">
-                <li className="menu-item">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="menu-item">
-                  <Link to="/jobs/">Jobs</Link>
-                </li>
-              </ul>
-            </div>
+          <div className="menu-links grid-row">
+            <ul className="menu-list">
+              <li className="menu-item">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="menu-item">
+                <Link to="/jobs/">Jobs</Link>
+              </li>
+            </ul>
           </div>
         </nav>
       </header>

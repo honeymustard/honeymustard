@@ -3,11 +3,12 @@ $grid-size: 1024px;
 $grid-lg-up: '(min-width: #{$grid-size})';
 
 .grid-row {
-    margin: 0 $grid-gutter;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
     width: 100%;
 
     @media #{$grid-lg-up} {
       margin: 0 auto;
-      max-width: $grid-size - ($grid-gutter * 2);
+      max-width: $grid-size;
     }
 }

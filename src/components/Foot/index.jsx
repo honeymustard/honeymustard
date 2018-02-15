@@ -5,7 +5,7 @@ import './foot.scss';
 
 const Foot = (props) => (
   <footer className="foot grid-row">
-    <div className="col">
+    <div className="foot-col">
       <section>
         <h3>INFO</h3>
         <p>
@@ -15,7 +15,7 @@ const Foot = (props) => (
       </section>
     </div>
 
-    <div className="col">
+    <div className="foot-col">
       <section>
         <h3>CONTACT ME</h3>
         <p>
@@ -25,7 +25,7 @@ const Foot = (props) => (
       </section>
     </div>
 
-    <div className="col">
+    <div className="foot-col">
       <section>
         <h3>LINKS</h3>
         <p>Visit me elsewhere</p>

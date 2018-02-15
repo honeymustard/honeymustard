@@ -3,30 +3,36 @@
 @import 'components/App/fonts.scss';
 @import 'components/App/grid.scss';
 
-$menu-height: 60px;
-
 .head {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    height: $menu-height;
-    background-color: $dark_pink;
+    min-height: 60px;
+
+    // Pre-load the anti burger
+    &:after {
+        content: '';
+        background-image: url('/static/anti-burger.svg');
+    }
 
     @media #{$grid-lg-up} {
-        background-color: initial;
         display: block;
-        position: static;
-        height: initial;
+        min-height: 190px;
+    }
+
+    &.has-trans {
+        transition: background-color .3s;
     }
 
     &.is-open {
         background-color: $dark_pink;
         position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
         bottom: 0;
 
         .menu-burger {
@@ -42,7 +48,8 @@ $menu-height: 60px;
 .menu {
 
     @media #{$grid-lg-up} {
-        padding: 40px 0;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     a {
@@ -51,6 +58,17 @@ $menu-height: 60px;
         &:hover,
         &:focus {
             color: $black;
+        }
+    }
+
+    .menu-top {
+        background-color: $dark_pink;
+        display: flex;
+        height: 60px;
+
+        @media #{$grid-lg-up} {
+            background-color: initial;
+            height: initial;
         }
     }
 
@@ -114,21 +132,10 @@ $menu-height: 60px;
     }
 
     .menu-links {
-        background-color: $dark_pink;
-        bottom: 0;
         display: none;
-        position: fixed;
-        top: $menu-height;
-        right: 0;
-        left: 0;
-
-        @media #{$grid-lg-up} {
-            position: static;
-        }
     }
 
     .menu-list {
-        background-color: $dark_pink;
         list-style-type: none;
         margin: 20px 0;
         padding: 0;
