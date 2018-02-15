@@ -2,6 +2,8 @@
  * utility mixins.
  */
 
+$align-space: 20px;
+
 @mixin clearfix {
 
     &:after,
@@ -25,7 +27,7 @@
 
 @mixin align-right {
     float: none;
-    padding: $page_space 0;
+    padding: $align-space 0;
 
     @media #{$grid-lg-up} {
         float: right;
@@ -35,7 +37,7 @@
 
 @mixin align-left {
     float: none;
-    padding: $page_space 0;
+    padding: $align-space 0;
 
     @media #{$grid-lg-up} {
         float: left;

@@ -4,6 +4,7 @@ $grid-lg-up: '(min-width: #{$grid-size})';
 
 .grid-row {
     margin: 0 $grid-gutter;
+    width: 100%;
 
     @media #{$grid-lg-up} {
       margin: 0 auto;
