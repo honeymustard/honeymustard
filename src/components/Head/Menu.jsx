@@ -1,8 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Burger from 'components/Icons/Burger';
+import AntiBurger from 'components/Icons/AntiBurger';
 
 import 'components/Head/menu.scss';
+
+let button = null;
 
 class Menu extends React.Component {
 
@@ -18,6 +23,11 @@ class Menu extends React.Component {
     ].join(' ');
   }
 
+  toggle() {
+    this.props.toggle();
+    button.blur();
+  }
+
   render() {
     return (
       <nav className={this.classes()}>
@@ -26,7 +36,9 @@ class Menu extends React.Component {
             <img className="menu-logo" src="/static/honeymustard.svg" />
           </div>
           <div className="menu-col menu-col-burger">
-            <button onClick={this.props.toggle} className="menu-burger"></button>
+            <button ref={e => button = e} onClick={this.toggle.bind(this)} className="menu-burger">
+              {this.props.open ? <AntiBurger/> : <Burger/>}
+            </button>
           </div>
         </div>
 

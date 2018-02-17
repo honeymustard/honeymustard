@@ -4,12 +4,6 @@
 
 .menu {
 
-    // Pre-load the anti burger
-    &:after {
-        content: '';
-        background-image: url('/static/anti-burger.svg');
-    }
-
     &.has-trans {
         .menu-links {
             transition: opacity 1s;
@@ -17,10 +11,6 @@
     }
 
     &.is-open {
-        .menu-burger {
-            background-image: url('/static/anti-burger.svg');
-        }
-
         .menu-links {
             display: block;
             opacity: 1;
@@ -89,25 +79,37 @@
         width: 30px;
         height: 30px;
         border: 0;
-        background-image: url('/static/burger.svg');
-        background-repeat: no-repeat;
-        background-size: 30px;
         outline: 0;
         padding: 0;
         display: block;
         user-select: none;
 
         @media #{$grid-lg-up} {
-            background-size: 75px;
             width: 75px;
             height: 75px;
             position: relative;
             top: 3px;
         }
 
+        .burger,
+        .anti-burger {
+            width: 100%;
+        }
+
+        .burger-patty,
+        .anti-burger-line {
+            fill: $yellow;
+            transition: fill .3s;
+        }
+
         &:hover,
         &:focus {
             cursor: pointer;
+
+            .burger-patty,
+            .anti-burger-line {
+                fill: $black;
+            }
         }
     }
 
