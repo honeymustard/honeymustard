@@ -2,7 +2,11 @@
  * google fonts.
  */
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro|Noto+Sans:700|Roboto+Condensed:700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Noto+Sans:700|Roboto:700);
+
+$font-sans: 'Source Sans Pro';
+$font-noto: 'Noto Sans';
+$font-roboto: 'Roboto';
 
 @mixin font-size($size) {
     font-size: $size + 0px;
@@ -10,21 +14,21 @@
 }
 
 @mixin font-normal {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $font-sans, sans-serif;
     font-size: 22px;
     font-weight: normal;
     line-height: 28px;
 }
 
 @mixin font-header {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: $font-noto, sans-serif;
     font-size: 26px;
     font-weight: normal;
     line-height: 30px;
 }
 
 @mixin font-sub-header {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: $font-roboto, sans-serif;
     font-size: 24px;
     font-weight: normal;
     line-height: 28px;

@@ -7,12 +7,11 @@ import AntiBurger from 'components/Icons/AntiBurger';
 
 import 'components/Head/menu.scss';
 
-let button = null;
-
 class Menu extends React.Component {
 
   constructor(props) {
     super(props);
+    this.button = null;
   }
 
   classes() {
@@ -25,7 +24,7 @@ class Menu extends React.Component {
 
   toggle() {
     this.props.toggle();
-    button.blur();
+    this.button.blur();
   }
 
   render() {
@@ -36,7 +35,7 @@ class Menu extends React.Component {
             <img className="menu-logo" src="/static/honeymustard.svg" />
           </div>
           <div className="menu-col menu-col-burger">
-            <button ref={e => button = e} onClick={this.toggle.bind(this)} className="menu-burger">
+            <button ref={e => this.button = e} onClick={this.toggle.bind(this)} className="menu-burger">
               {this.props.open ? <AntiBurger/> : <Burger/>}
             </button>
           </div>

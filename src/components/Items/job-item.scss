@@ -1,3 +1,26 @@
+@import 'components/App/colors.scss';
+@import 'components/App/fonts.scss';
+
 .job-item {
     margin: 0 0 40px;
+
+    p {
+        margin: 0 0 20px;
+    }
+}
+
+.tech-list {
+    max-width: 500px;
+}
+
+.tech-item {
+    font-family: $font-sans, sans-serif;
+    background-color: $dark_pink;
+    display: inline-flex;
+    margin: 0 6px 6px 0;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 4px;
 }

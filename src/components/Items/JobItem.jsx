@@ -11,6 +11,14 @@ const JobItem = ({item}) => (
       </a>
     </h3>
     <p>{item.tagline}</p>
+
+    <ul className="tech-list">
+      {item.technologies.map(tech => (
+        <li className="tech-item" key={tech}>
+          <span>{tech}</span>
+        </li>
+      ))}
+    </ul>
   </li>
 );
 

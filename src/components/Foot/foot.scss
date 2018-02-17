@@ -1,8 +1,9 @@
-@import 'src/components/App/grid.scss';
+@import 'components/App/grid.scss';
 
 .foot {
     display: flex;
     flex-direction: column;
+    flex: 1 0;
     padding-top: 20px;
     padding-bottom: 20px;
 
