@@ -34,31 +34,25 @@ body {
     flex-grow: 1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @include font-header;
-    @include selection;
-    line-height: 1.2;
-    margin: 0 0 10px;
-    padding: 0;
-}
-
-$size : 24;
+$size: 32;
+$line: 12;
 
 @for $i from 1 through 6 {
     h#{$i} {
+        @include font-header;
+        @include selection;
         @include font-size($size);
-        $size : $size - 2;
+        margin: 0 0 #{$line}px;
+        padding: 0;
+        $size: $size - 2;
+        $line: $line - 2;
     }
 }
 
 a {
     @include selection;
     text-decoration: none;
+    color: $yellow;
 }
 
 p {

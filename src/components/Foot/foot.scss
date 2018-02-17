@@ -3,9 +3,12 @@
 .foot {
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     @media #{$grid-lg-up} {
         flex-direction: row;
+        padding-bottom: 40px;
     }
 
     .foot-col {
@@ -14,7 +17,7 @@
 
         @media #{$grid-lg-up} {
             flex: 1 0 33.3%;
-            margin: 0 0 40px;
+            margin: 0;
         }
     }
 }

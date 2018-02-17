@@ -7,7 +7,7 @@ const Foot = (props) => (
   <footer className="foot grid-row">
     <div className="foot-col">
       <section>
-        <h3>INFO</h3>
+        <h3>Info</h3>
         <p>
           Copyright © 2018<br />
           <Link to="/">Honeymustard.org</Link>
@@ -17,7 +17,7 @@ const Foot = (props) => (
 
     <div className="foot-col">
       <section>
-        <h3>CONTACT ME</h3>
+        <h3>Contact</h3>
         <p>
           Send me some post<br />
           <a href="mailto:post@honeymustard.org">post@honeymustard.org</a>
@@ -27,7 +27,7 @@ const Foot = (props) => (
 
     <div className="foot-col">
       <section>
-        <h3>LINKS</h3>
+        <h3>Links</h3>
         <p>Visit me elsewhere</p>
       </section>
     </div>
