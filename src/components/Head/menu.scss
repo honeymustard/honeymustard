@@ -1,0 +1,147 @@
+@import 'components/App/colors.scss';
+@import 'components/App/fonts.scss';
+@import 'components/App/grid.scss';
+
+.menu {
+
+    // Pre-load the anti burger
+    &:after {
+        content: '';
+        background-image: url('/static/anti-burger.svg');
+    }
+
+    &.has-trans {
+        .menu-links {
+            transition: opacity 1s;
+        }
+    }
+
+    &.is-open {
+        .menu-burger {
+            background-image: url('/static/anti-burger.svg');
+        }
+
+        .menu-links {
+            opacity: 1;
+        }
+    }
+
+    @media #{$grid-lg-up} {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    a {
+        color: $yellow;
+
+        &:hover,
+        &:focus {
+            color: $black;
+        }
+    }
+
+    .menu-top {
+        background-color: $dark_pink;
+        display: flex;
+        height: 60px;
+
+        @media #{$grid-lg-up} {
+            background-color: initial;
+            height: initial;
+        }
+    }
+
+    .menu-row {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .menu-col {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-col-logo {
+        flex-grow: 1;
+    }
+
+    .menu-col-burger {
+        @media #{$grid-lg-up} {
+            align-items: flex-end;
+            padding-left: 20px;
+        }
+    }
+
+    .menu-logo {
+        display: block;
+        height: 30px;
+        max-width: 100%;
+
+        @media #{$grid-lg-up} {
+            height: initial;
+            max-height: 120px;
+        }
+    }
+
+    .menu-burger {
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        background-image: url('/static/burger.svg');
+        background-repeat: no-repeat;
+        background-size: 30px;
+        outline: 0;
+        padding: 0;
+        display: block;
+        user-select: none;
+
+        @media #{$grid-lg-up} {
+            background-size: 75px;
+            width: 75px;
+            height: 75px;
+            position: relative;
+            top: 3px;
+        }
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+        }
+    }
+
+    .menu-links {
+        opacity: 0;
+    }
+
+    .menu-list {
+        list-style-type: none;
+        margin: 20px 0;
+        padding: 0;
+        width: 100%;
+
+        @media #{$grid-lg-up} {
+            margin: 60px 0;
+        }
+    }
+
+    .menu-item {
+        margin: 0 0 6px;
+
+        @media #{$grid-lg-up} {
+            margin: 0 0 20px;
+        }
+
+        a {
+            @include font-header;
+            font-size: 20px;
+            float: none;
+            display: inline-block;
+
+            @media #{$grid-lg-up} {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+        }
+    }
+}
