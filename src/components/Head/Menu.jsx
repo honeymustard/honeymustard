@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import 'components/Head/menu.scss';
 
@@ -43,5 +44,10 @@ class Menu extends React.Component {
     )
   }
 }
+
+Menu.propTypes = {
+  open: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
+};
 
 export default Menu;
