@@ -5,12 +5,11 @@ var ProjectController = new require('../controllers/projectController');
 var controller = new ProjectController();
 
 // Public routes
-router.route('/projects').get(controller.get);
-router.route('/projects/:id').get(controller.getByID);
+router.get('/projects', controller.get);
+router.get('/projects/:id', controller.getByID);
 
 // Private routes
-router.use(authenticate);
-router.route('/projects').post(controller.post);
-router.route('/projects/:id').patch(controller.patchByID);
+router.post('/projects', authenticate, controller.post);
+router.patch('/projects/:id', authenticate, controller.patchByID);
 
 module.exports = router;

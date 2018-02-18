@@ -5,12 +5,11 @@ var JobController = require('../controllers/jobController');
 var controller = new JobController();
 
 // Public routes
-router.route('/jobs').get(controller.get);
-router.route('/jobs/:id').get(controller.getByID);
+router.get('/jobs', controller.get);
+router.get('/jobs/:id', controller.getByID);
 
 // Private routes
-router.use(authenticate);
-router.route('/jobs').post(controller.post);
-router.route('/jobs/:id').patch(controller.patchByID);
+router.post('/jobs', authenticate, controller.post);
+router.patch('/jobs/:id', authenticate, controller.patchByID);
 
 module.exports = router;

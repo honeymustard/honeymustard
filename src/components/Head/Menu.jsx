@@ -51,6 +51,9 @@ class Menu extends React.Component {
             <li className="menu-item">
               <Link to="/jobs/">Jobs</Link>
             </li>
+            <li className="menu-item">
+              <Link to="/education/">Education</Link>
+            </li>
           </ul>
         </div>
       </nav>

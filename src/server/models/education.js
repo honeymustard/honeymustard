@@ -28,7 +28,7 @@ var education = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tagline: {
+  degree: {
     type: String,
     required: true,
   },

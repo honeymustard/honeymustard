@@ -4,7 +4,6 @@ import './job-item.scss';
 
 const JobItem = ({item}) => (
   <li className="job-item" key={item._id}>
-    {console.log(item)}
     <h3 className="job-item-title">
       <a href={item.url}>
         {item.company}

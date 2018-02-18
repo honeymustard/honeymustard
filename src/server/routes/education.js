@@ -5,12 +5,11 @@ var EducationController = require('../controllers/educationController');
 var controller = new EducationController();
 
 // Public routes
-router.route('/education').get(controller.get);
-router.route('/education/:id').get(controller.getByID);
+router.get('/education', controller.get);
+router.get('/education/:id', controller.getByID);
 
 // Private routes
-router.use(authenticate);
-router.route('/education').post(controller.post);
-router.route('/education/:id').patch(controller.patchByID);
+router.post('/education', authenticate, controller.post);
+router.patch('/education/:id', authenticate, controller.patchByID);
 
 module.exports = router;

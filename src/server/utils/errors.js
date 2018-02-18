@@ -9,4 +9,4 @@ function getMessages(err) {
   return list;
 }
 
-module.exports = { getMessages };
+module.exports = getMessages;
