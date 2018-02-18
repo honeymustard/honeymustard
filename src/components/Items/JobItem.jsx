@@ -1,4 +1,5 @@
 import React from 'react';
+import TechList from 'components/Lists/TechList';
 
 import './job-item.scss';
 
@@ -11,13 +12,7 @@ const JobItem = ({item}) => (
     </h3>
     <p>{item.tagline}</p>
 
-    <ul className="tech-list">
-      {item.technologies.map(tech => (
-        <li className="tech-item" key={tech}>
-          <span>{tech}</span>
-        </li>
-      ))}
-    </ul>
+    <TechList list={item.technologies} />
   </li>
 );
 

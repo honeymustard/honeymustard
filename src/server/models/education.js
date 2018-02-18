@@ -5,6 +5,7 @@ var course = new mongoose.Schema({
     type: String,
     required: true,
   },
+  code: String,
   tagline: String,
   technologies: [String]
 });
