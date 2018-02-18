@@ -27,8 +27,9 @@ const Foot = (props) => (
 
     <div className="foot-col">
       <section>
-        <h3>Links</h3>
-        <p>Visit me elsewhere</p>
+        <h3>Sourcecode</h3>
+        <p>You can find all of my public projects on <a href="https://github.com/honeymustard">github.com!</a>
+        </p>
       </section>
     </div>
   </footer>

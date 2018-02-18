@@ -54,6 +54,10 @@
 
     .menu-col-logo {
         flex-grow: 1;
+
+        a {
+            display: block;
+        }
     }
 
     .menu-col-burger {

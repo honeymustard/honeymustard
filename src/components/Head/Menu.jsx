@@ -32,7 +32,9 @@ class Menu extends React.Component {
       <nav className={this.classes()}>
         <div className="grid-row menu-row menu-top">
           <div className="menu-col menu-col-logo">
-            <img className="menu-logo" src="/static/honeymustard.svg" />
+            <Link to="/">
+              <img className="menu-logo" src="/static/honeymustard.svg" />
+            </Link>
           </div>
           <div className="menu-col menu-col-burger">
             <button ref={e => this.button = e} onClick={this.toggle.bind(this)} className="menu-burger">
