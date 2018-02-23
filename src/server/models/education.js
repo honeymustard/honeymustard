@@ -33,9 +33,10 @@ var education = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: String,
+  tagline: String,
   city: String,
   country: String,
+  technologies: [String],
   courses: {
     type: [course],
   },

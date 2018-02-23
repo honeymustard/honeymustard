@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseList from 'components/Lists/CourseList';
+import TechList from 'components/Lists/TechList';
 
 import './job-item.scss';
 
@@ -11,7 +11,7 @@ const EducationItem = ({item}) => (
       </a>
     </h3>
     <p>{item.tagline}</p>
-    <CourseList list={item.courses} />
+    <TechList list={item.technologies} />
   </li>
 );
 
