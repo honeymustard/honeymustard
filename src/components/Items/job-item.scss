@@ -1,3 +1,5 @@
+@import 'components/App/fonts.scss';
+
 .job-item {
     margin: 0 0 40px;
     width: 100%;
@@ -5,4 +7,11 @@
     p {
         margin: 0 0 20px;
     }
+}
+
+.job-date {
+    @include font-normal;
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
 }
