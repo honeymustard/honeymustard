@@ -8,10 +8,6 @@ class Archive extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      items: [],
-    };
   }
 
   static get defaultProps() {
@@ -20,24 +16,10 @@ class Archive extends React.Component {
     };
   }
 
-  componentDidMount() {
-
-    fetch(this.props.route, {
-      Accept: 'application/json',
-    })
-    .then(resp => resp.json())
-    .then(data => {
-      this.setState({items: data});
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  }
-
   render() {
 
     let ListItem = this.props.component;
-    let items = this.state.items;
+    let items = this.props.items;
 
     if (items.length === 0) {
       return '';

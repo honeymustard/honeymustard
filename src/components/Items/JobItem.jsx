@@ -1,6 +1,6 @@
 import React from 'react';
 import TechList from 'components/Lists/TechList';
-import {formatDate} from 'utils/time';
+import { formatDate } from 'utils/time';
 
 import './job-item.scss';
 
