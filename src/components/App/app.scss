@@ -53,6 +53,12 @@ a {
     @include selection;
     text-decoration: none;
     color: $yellow;
+    transition: color .2s;
+
+    &:hover,
+    &:focus {
+        color: $black;
+    }
 }
 
 p {
