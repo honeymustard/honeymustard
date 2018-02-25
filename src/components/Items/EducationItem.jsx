@@ -1,5 +1,6 @@
 import React from 'react';
 import TechList from 'components/Lists/TechList';
+import { formatDate } from 'utils/time';
 
 import './job-item.scss';
 
@@ -10,6 +11,12 @@ const EducationItem = ({item}) => (
         {item.institution}
       </a>
     </h3>
+
+    <span className="job-date">
+      {formatDate(item.startDate)} -
+      {item.endDate ? formatDate(item.endDate) : 'Present'}
+    </span>
+
     <p>{item.tagline}</p>
     <TechList list={item.technologies} />
   </li>

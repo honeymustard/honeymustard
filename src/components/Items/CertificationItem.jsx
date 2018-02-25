@@ -3,6 +3,7 @@ import { formatDate } from 'utils/time';
 import TechList from 'components/Lists/TechList';
 
 import './job-item.scss';
+import './certification-item.scss';
 
 const CertificationItem = ({item}) => (
   <li className="job-item" key={item._id}>
@@ -15,6 +16,10 @@ const CertificationItem = ({item}) => (
     </span>
 
     <p>{item.tagline}</p>
+
+    <span className="certification-authority">
+      Authority: {item.authority}
+    </span>
 
     <TechList list={item.technologies} />
   </li>
