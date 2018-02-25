@@ -25,7 +25,8 @@ var certification = new mongoose.Schema({
     required: true,
   },
   certificateUrl: String,
-  license: String
+  license: String,
+  technologies: [String]
 });
 
 certification.pre('save', function (next) {

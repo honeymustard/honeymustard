@@ -1,5 +1,6 @@
 import React from 'react';
 import { formatDate } from 'utils/time';
+import TechList from 'components/Lists/TechList';
 
 import './job-item.scss';
 
@@ -14,6 +15,8 @@ const CertificationItem = ({item}) => (
     </span>
 
     <p>{item.tagline}</p>
+
+    <TechList list={item.technologies} />
   </li>
 );
 
