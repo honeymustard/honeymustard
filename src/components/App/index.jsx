@@ -4,7 +4,8 @@ import {
   IndexPage,
   JobsPage,
   MissingPage,
-  EducationPage
+  EducationPage,
+  CertificationsPage
 } from 'components/Pages';
 
 import 'normalize.css';
@@ -22,6 +23,7 @@ class App extends React.Component {
           <Route exact path="/" component={IndexPage} />
           <Route exact path="/jobs" component={JobsPage} />
           <Route exact path="/education" component={EducationPage} />
+          <Route exact path="/certifications" component={CertificationsPage} />
           <Route path="*" component={MissingPage} />
         </Switch>
       </Router>

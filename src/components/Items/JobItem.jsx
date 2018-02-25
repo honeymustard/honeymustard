@@ -17,7 +17,7 @@ let formatDate = isoDate => {
 const JobItem = ({item}) => (
   <li className="job-item" key={item._id}>
     <h3 className="job-title">
-      <a href={item.url}>
+      <a target="_blank" href={item.url}>
         {item.company}
       </a>
     </h3>
