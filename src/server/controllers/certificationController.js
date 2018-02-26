@@ -15,13 +15,19 @@ class CertificationController {
   }
 
   get(req, res) {
-    Certification.find((error, items) => {
-      if (error) {
-        res.status(500).json(getMessages(error));
-      } else {
-        res.status(200).json(items);
-      }
-    });
+    let limit = req.limit || 0;
+
+    Certification
+      .find({})
+      .sort({'date': -1})
+      .limit(limit)
+      .exec((error, items) => {
+        if (error) {
+          res.status(500).json(getMessages(error));
+        } else {
+          res.status(200).json(items);
+        }
+      });
   }
 
   getByID(req, res) {
