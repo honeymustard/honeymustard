@@ -12,22 +12,14 @@ class CertificationsPage extends React.Component {
     this.state = {items: []};
   }
 
-  compare(a, b) {
-    return new Date(a.date).getTime() < new Date(b.date).getTime();
-  }
-
   componentDidMount() {
 
     fetch(this.route, {
       Accept: 'application/json',
     })
     .then(resp => resp.json())
-    .then(data => {
-      this.setState({items: data.sort(this.compare)});
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    .then(data => this.setState({items: data}))
+    .catch(error => console.log(error));
   }
 
   render() {

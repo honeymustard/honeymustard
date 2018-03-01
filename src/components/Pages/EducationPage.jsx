@@ -12,22 +12,14 @@ class EducationPage extends React.Component {
     this.state = {items: []};
   }
 
-  compare(a, b) {
-    return new Date(a.startDate).getTime() < new Date(b.startDate).getTime();
-  }
-
   componentDidMount() {
 
     fetch(this.route, {
       Accept: 'application/json',
     })
     .then(resp => resp.json())
-    .then(data => {
-      this.setState({items: data.sort(this.compare)});
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    .then(data => this.setState({items: data}))
+    .catch(error => console.log(error));
   }
 
   render() {
