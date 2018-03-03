@@ -14,12 +14,21 @@ class JobsPage extends React.Component {
 
   componentDidMount() {
 
-    fetch(this.route, {
-      Accept: 'application/json',
-    })
-    .then(resp => resp.json())
-    .then(data => this.setState({items: data}))
-    .catch(error => console.log(error));
+    let data = localStorage.getItem('api-jobs');
+
+    if (data) {
+      this.setState({items: JSON.parse(data)});
+    } else {
+      fetch(this.route, {
+        Accept: 'application/json',
+      })
+      .then(resp => resp.json())
+      .then(data => {
+        localStorage.setItem('api-jobs', JSON.stringify(data));
+        this.setState({items: data});
+      })
+      .catch(error => console.log(error));
+    }
   }
 
   render() {

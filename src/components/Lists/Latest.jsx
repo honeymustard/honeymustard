@@ -17,20 +17,43 @@ class Latest extends React.Component {
 
   componentDidMount() {
 
-    fetch('/api/jobs?limit=1', {
-      Accept: 'application/json'
-    }).then(data => data.json())
-      .then(data => this.setState({'job': data[0]}));
+    if (!this.loadData('job')) {
+      fetch('/api/jobs?limit=1', {
+        Accept: 'application/json'
+      }).then(data => data.json())
+        .then(data => this.saveData('job', data));
+    }
 
-    fetch('/api/education?limit=1', {
-      Accept: 'application/json'
-    }).then(data => data.json())
-      .then(data => this.setState({'education': data[0]}));
+    if (!this.loadData('education')) {
+      fetch('/api/education?limit=1', {
+        Accept: 'application/json'
+      }).then(data => data.json())
+        .then(data => this.saveData('education', data));
+    }
 
-    fetch('/api/certifications?limit=1', {
-      Accept: 'application/json',
-    }).then(data => data.json())
-      .then(data => this.setState({'certification': data[0]}));
+    if (!this.loadData('certification')) {
+      fetch('/api/certifications?limit=1', {
+        Accept: 'application/json',
+      }).then(data => data.json())
+        .then(data => this.saveData('certification', data));
+    }
+  }
+
+  loadData(key) {
+    let data = localStorage.getItem(`latest-${key}`);
+
+    if (data) {
+      this.setState({[key]: JSON.parse(data)[0]});
+    }
+
+    return data !== null;
+  }
+
+  saveData(key, data) {
+    if (data.length) {
+      localStorage.setItem(`latest-${key}`, JSON.stringify(data));
+      this.setState({key: data[0]});
+    }
   }
 
   render() {
