@@ -34,7 +34,13 @@ class JobsPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Archive items={this.state.items} component={JobItem} />
+        <section className="column-1">
+          <Archive items={this.state.items} component={JobItem} />
+        </section>
+
+        <section className="column-2">
+          <h2>Jobs</h2>
+        </section>
       </Layout>
     );
   }

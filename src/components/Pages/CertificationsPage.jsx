@@ -34,7 +34,14 @@ class CertificationsPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Archive items={this.state.items} component={CertificationItem} />
+        <section className="column-1">
+          <Archive items={this.state.items} component={CertificationItem} />
+        </section>
+
+        <section className="column-2">
+          <h2>Certifications</h2>
+          <p>A list of online certifications I have taken.</p>
+        </section>
       </Layout>
     );
   }

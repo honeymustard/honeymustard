@@ -16,8 +16,7 @@
     }
 }
 
-.column-1,
-.archive-items {
+.column-1 {
     order: 2;
 
     @media #{$grid-lg-up} {
