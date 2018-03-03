@@ -5,7 +5,7 @@ import Latest from 'components/Lists/Latest';
 const IndexPage = () => (
   <Layout>
     <section className="column-1">
-      <Latest limit="1" />
+      <Latest />
     </section>
 
     <section className="column-2">
