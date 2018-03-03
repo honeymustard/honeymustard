@@ -1,4 +1,6 @@
 @import 'src/components/App/grid.scss';
+@import 'src/components/App/fonts.scss';
+@import 'src/components/App/colors.scss';
 
 .main {
     display: flex;
@@ -16,11 +18,10 @@
 
 .column-1,
 .archive-items {
-    flex-shrink: 0;
-    max-width: 650px;
     order: 2;
 
     @media #{$grid-lg-up} {
+        width: 50%;
         padding-right: 15px;
         order: 1;
     }
@@ -34,6 +35,7 @@
         padding-left: 15px;
         margin: 0;
         order: 2;
+        width: 50%;
     }
 
     p {

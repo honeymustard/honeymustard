@@ -1,0 +1,30 @@
+@import 'components/App/grid.scss';
+@import 'components/App/fonts.scss';
+@import 'components/App/colors.scss';
+
+.latest-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.latest-item {
+    margin: 0 0 30px;
+
+    @media #{$grid-lg-up} {
+        margin: 0 0 40px;
+    }
+}
+
+.latest-label {
+    @include font-normal;
+    font-size: 28px;
+    color: $pink;
+    display: block;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+.latest-title {
+    font-size: 28px;
+}
