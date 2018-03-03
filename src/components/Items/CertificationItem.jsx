@@ -6,7 +6,7 @@ import './job-item.scss';
 import './certification-item.scss';
 
 const CertificationItem = ({item}) => (
-  <li className="job-item" key={item._id}>
+  <li className="job-item" key={item._id} id={item.slug}>
     <h3 className="job-item-title">
       <a target="_blank" href={item.url}>{item.name}</a>
     </h3>

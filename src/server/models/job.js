@@ -6,6 +6,10 @@ var job = new mongoose.Schema({
         type: String,
         required: true,
     },
+    slug: {
+      type: String,
+      required: true,
+    },
     company: {
         type: String,
         required: true,

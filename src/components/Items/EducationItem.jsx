@@ -5,7 +5,7 @@ import { formatDate } from 'utils/time';
 import './job-item.scss';
 
 const EducationItem = ({item}) => (
-  <li className="job-item" key={item._id}>
+  <li className="job-item" key={item._id} name={item.slug}>
     <h3 className="job-item-title">
       <a target="_blank" href={item.url}>
         {item.institution}

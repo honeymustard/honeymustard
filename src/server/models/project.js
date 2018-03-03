@@ -6,6 +6,10 @@ var project = new mongoose.Schema({
         type: String,
         required: true,
     },
+    slug: {
+      type: String,
+      required: true,
+    },
     license: {
         type: String,
         required: true,
