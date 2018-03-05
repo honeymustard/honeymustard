@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 import './latest.scss';
 
@@ -69,7 +69,7 @@ class Latest extends React.Component {
               Latest in: <Link to="/jobs/">Jobs</Link>
             </span>
             <h3 className="latest-title">
-              <a href={'/jobs/#' + job.slug}>{job.company}</a>
+              <Link to={'/jobs/#' + job.slug}>{job.company}</Link>
             </h3>
             <p>{job.tagline}</p>
           </li>
@@ -79,7 +79,7 @@ class Latest extends React.Component {
               Latest in: <Link to="/education/">Education</Link>
             </span>
             <h3 className="latest-title">
-              <a href={'/education/#' + education.slug}>{education.institution}</a>
+              <Link to={'/education/#' + education.slug}>{education.institution}</Link>
             </h3>
             <p>{education.tagline}</p>
           </li>
@@ -89,7 +89,7 @@ class Latest extends React.Component {
               Latest in: <Link to="/certifications/">Certifications</Link>
             </span>
             <h3 className="latest-title">
-              <a href={'/certifications/#' + certification.slug}>{certification.name}</a>
+              <Link to={'/certifications/#' + certification.slug}>{certification.name}</Link>
             </h3>
             <p>{certification.tagline}</p>
           </li>
