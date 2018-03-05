@@ -45,7 +45,7 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     devServer: {
-        progress: true,
+        progress: false,
         inline: true,
         proxy: {
             "**": "http://localhost:3000"
