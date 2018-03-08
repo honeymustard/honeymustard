@@ -52,7 +52,7 @@ class Latest extends React.Component {
   saveData(key, data) {
     if (data.length) {
       localStorage.setItem(`latest-${key}`, JSON.stringify(data));
-      this.setState({key: data[0]});
+      this.setState({[key]: data[0]});
     }
   }
 
