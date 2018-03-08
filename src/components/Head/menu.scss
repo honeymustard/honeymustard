@@ -134,7 +134,7 @@
     }
 
     .menu-item {
-        margin: 0 0 6px;
+        margin: 0 0 15px;
 
         @media #{$grid-lg-up} {
             margin: 0 0 20px;
@@ -142,13 +142,13 @@
 
         a {
             @include font-header;
-            font-size: 20px;
+            font-size: 28px;
+            line-height: 1.2;
             float: none;
             display: inline-block;
 
             @media #{$grid-lg-up} {
                 font-size: 36px;
-                line-height: 1.2;
             }
         }
     }

@@ -1,20 +1,22 @@
 @import 'components/App/grid.scss';
 
 .foot {
-    margin-top: 20px;
+    @media #{$grid-lg-up} {
+        margin-top: 20px;
+    }
 
     .foot-row {
-      display: flex;
-      flex-direction: column;
-      flex: 1 0;
-      padding-top: 20px;
-      padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-      @media #{$grid-lg-up} {
-          flex-direction: row;
-          padding-top: 40px;
-          padding-bottom: 40px;
-      }
+        @media #{$grid-lg-up} {
+            flex-direction: row;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
     }
 
     .foot-col {

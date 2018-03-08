@@ -21,7 +21,7 @@ const Foot = (props) => (
           <h3>Contact</h3>
           <p>
             Send me some post<br />
-            <a href="mailto:post@honeymustard.io">post@honeymustard.io</a>
+            <a href="mailto:adrian@honeymustard.io">adrian@honeymustard.io</a>
           </p>
         </section>
       </div>
