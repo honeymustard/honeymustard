@@ -11,7 +11,7 @@ const Foot = (props) => (
           <h3>Info</h3>
           <p>
             Copyright © 2018<br />
-            <Link to="/">Honeymustard.org</Link>
+            <Link to="/">Honeymustard.io</Link>
           </p>
         </section>
       </div>
@@ -21,7 +21,7 @@ const Foot = (props) => (
           <h3>Contact</h3>
           <p>
             Send me some post<br />
-            <a href="mailto:post@honeymustard.org">post@honeymustard.org</a>
+            <a href="mailto:post@honeymustard.io">post@honeymustard.io</a>
           </p>
         </section>
       </div>
