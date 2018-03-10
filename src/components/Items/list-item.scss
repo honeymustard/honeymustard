@@ -1,6 +1,6 @@
 @import 'components/App/fonts.scss';
 
-.job-item {
+.list-item {
     margin: 0 0 40px;
     width: 100%;
 
@@ -9,7 +9,7 @@
     }
 }
 
-.job-date {
+.list-item-date {
     @include font-normal;
     display: block;
     font-size: 20px;

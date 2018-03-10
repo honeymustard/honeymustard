@@ -2,16 +2,16 @@ import React from 'react';
 import { formatDate } from 'utils/time';
 import TechList from 'components/Lists/TechList';
 
-import './job-item.scss';
+import './list-item.scss';
 import './certification-item.scss';
 
 const CertificationItem = ({item}) => (
-  <li className="job-item" key={item._id} id={item.slug}>
-    <h3 className="job-item-title">
+  <li className="list-item" key={item._id} id={item.slug}>
+    <h3 className="list-item-title">
       <a target="_blank" href={item.url}>{item.name}</a>
     </h3>
 
-    <span className="job-date">
+    <span className="list-item-date">
       {formatDate(item.date)}
     </span>
 
