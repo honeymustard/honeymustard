@@ -4,9 +4,10 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var routes = require('./src/server/routes');
+var secrets = require('./secrets.js');
 var app = express();
 
-mongoose.connect('mongodb://honeymustard:43ApplTree@ds127126.mlab.com:27126/honeymustard', {
+mongoose.connect(secrets.mongodb, {
   useMongoClient: true
 });
 
@@ -14,7 +15,7 @@ mongoose.Promise = global.Promise;
 
 /* Use sessions */
 app.use(session({
-  secret: 'oatmeal-sandwich',
+  secret: secrets.sessions,
   resave: false,
   saveUninitialized: false,
   store: new MongoStore({
