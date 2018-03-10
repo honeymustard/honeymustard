@@ -1,11 +1,12 @@
-# Honeymustard
+# Honeymustard.io
 
-The new Honeymustard.org built with React and NodeJS
+My personal site built using MERN stack.
 
 
 ## Instructions
 ```
 yarn build  # production build
+yarn serve  # run production server
 yarn start  # start development server
 yarn clean  # clean built files
 ```
