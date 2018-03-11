@@ -12,7 +12,6 @@ import {
 import 'normalize.css';
 import 'components/App/app.scss';
 
-
 /**
  * The core App component.
  */
