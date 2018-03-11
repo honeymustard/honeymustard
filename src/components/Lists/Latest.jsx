@@ -1,4 +1,5 @@
 import React from 'react';
+import API from 'api';
 import { HashLink as Link } from 'react-router-hash-link';
 
 import './latest.scss';
@@ -17,43 +18,17 @@ class Latest extends React.Component {
 
   componentDidMount() {
 
-    if (!this.loadData('job')) {
-      fetch('/api/jobs?limit=1', {
-        Accept: 'application/json'
-      }).then(data => data.json())
-        .then(data => this.saveData('job', data));
-    }
+    new API().get('jobs?limit=1')
+      .then(data => this.setState({job: data[0]}))
+      .catch(error => console.log(error));
 
-    if (!this.loadData('education')) {
-      fetch('/api/education?limit=1', {
-        Accept: 'application/json'
-      }).then(data => data.json())
-        .then(data => this.saveData('education', data));
-    }
+    new API().get('education?limit=1')
+      .then(data => this.setState({education: data[0]}))
+      .catch(error => console.log(error));
 
-    if (!this.loadData('certification')) {
-      fetch('/api/certifications?limit=1', {
-        Accept: 'application/json',
-      }).then(data => data.json())
-        .then(data => this.saveData('certification', data));
-    }
-  }
-
-  loadData(key) {
-    let data = localStorage.getItem(`latest-${key}`);
-
-    if (data) {
-      this.setState({[key]: JSON.parse(data)[0]});
-    }
-
-    return data !== null;
-  }
-
-  saveData(key, data) {
-    if (data.length) {
-      localStorage.setItem(`latest-${key}`, JSON.stringify(data));
-      this.setState({[key]: data[0]});
-    }
+    new API().get('certifications?limit=1')
+      .then(data => this.setState({certification: data[0]}))
+      .catch(error => console.log(error));
   }
 
   render() {
