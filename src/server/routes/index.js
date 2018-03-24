@@ -1,4 +1,5 @@
 var express = require('express');
+var posts = require('./posts');
 var jobs = require('./jobs');
 var projects = require('./projects');
 var education = require('./education');
@@ -6,6 +7,7 @@ var certifications = require('./certifications');
 var auth = require('./auth');
 var router = express.Router();
 
+router.use('/api', posts);
 router.use('/api', jobs);
 router.use('/api', projects);
 router.use('/api', education);

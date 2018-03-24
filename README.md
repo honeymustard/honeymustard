@@ -1,6 +1,6 @@
 # Honeymustard.io
 
-My personal site built using MERN stack.
+Everyone's favorite MERN stack website.
 
 
 ## Instructions
