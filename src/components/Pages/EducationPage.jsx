@@ -4,14 +4,64 @@ import { Layout } from 'components/Layouts';
 import Archive from 'containers/Archive';
 import EducationItem from 'components/Items/EducationItem';
 import Post from 'components/Post';
-
-import 'components/Lists/list.scss';
+import List from 'components/Lists/List';
 
 class EducationPage extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {items: []};
+
+    this.items = [
+      {
+        title: "Computer organization",
+        text: "Operating systems, Memory, I/O, Multitasking, History.",
+      },
+      {
+        title: "Computer architecture",
+        text: "Binary, Machine code, Assembly, Linking, Compilation.",
+      },
+      {
+        title: "Computer algorithms",
+        text: "Sorting, Traversal, Complexity (Big-O notation), Graph theory.",
+      },
+      {
+        title: "Computer logic",
+        text: "Gates, Clocks, Adders, Flip-flops, K-maps.",
+      },
+      {
+        title: "Computer programming",
+        text: "Java, C, ASM, Standard ML, Prolog, Scheme, Python, Shell",
+      },
+      {
+        title: "Computer networks",
+        text: "TCP/IP, Socket programming, Routing, OSI-model, Flow control.",
+      },
+      {
+        title: "Computer linguistics",
+        text: "Context-free grammars, Regular expressions.",
+      },
+      {
+        title: "Discrete mathematics",
+        text: "Set theory, Function theory, First-order logic, Combinatorics.",
+      },
+      {
+        title: "Abstract data types",
+        text: "Stacks, Queues, Sets, Lists, Trees, Heaps, Hash maps, Hash tables.",
+      },
+      {
+        title: "Automata theory",
+        text: "Finite state machines, Turing machines, Push-down automata.",
+      },
+      {
+        title: "Logic",
+        text: "Boolean algebra, Complexity theory (NP), Lambda calculus.",
+      },
+      {
+        title: "Russian",
+        text: "Grammar, Language usage.",
+      },
+    ];
   }
 
   componentDidMount() {
@@ -29,57 +79,7 @@ class EducationPage extends React.Component {
 
         <section className="column-2">
           <Post id="5ab759bbd1c89310cb19c3f7" />
-
-          <ul className="list-regular">
-            <li className="list-item">
-              <h4 className="list-title">Computer organization</h4>
-              <p>Operating systems, Memory, I/O, Multitasking, History.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Computer architecture</h4>
-              <p>Binary, Machine code, Assembly, Linking, Compilation.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Computer algorithms</h4>
-              <p>Sorting, Traversal, Complexity (Big-O notation), Graph theory.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Computer logic</h4>
-              <p>Gates, Clocks, Adders, Flip-flops, K-maps.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Computer programming.</h4>
-              <p>Java, C, ASM, Standard ML, Prolog, Scheme, Python, Shell</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Computer networks</h4>
-              <p>TCP/IP, Socket programming, Routing, OSI-model, Flow control.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Computer linguistics</h4>
-              <p>Context-free grammars, Regular expressions.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Discrete mathematics</h4>
-              <p>Set theory, Function theory, First-order logic, Combinatorics.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Abstract data types</h4>
-              <p>Stacks, Queues, Sets, Lists, Trees, Heaps, Hash maps, Hash tables.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Automata theory</h4>
-              <p>Finite state machines, Turing machines, Push-down automata.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Logic</h4>
-              <p>Boolean algebra, Complexity theory (NP), Lambda calculus.</p>
-            </li>
-            <li className="list-item">
-              <h4 className="list-title">Russian</h4>
-              <p>Grammar, Language usage.</p>
-            </li>
-          </ul>
+          <List items={this.items} />
         </section>
       </Layout>
     );
