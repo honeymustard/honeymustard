@@ -18,9 +18,12 @@ var post = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    tagline: {
+    postType: {
         type: String,
         required: true,
+    },
+    description: {
+        type: String
     },
     content: {
         type: String,

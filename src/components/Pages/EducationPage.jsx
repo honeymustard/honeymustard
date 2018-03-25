@@ -3,6 +3,7 @@ import API from 'api';
 import { Layout } from 'components/Layouts';
 import Archive from 'containers/Archive';
 import EducationItem from 'components/Items/EducationItem';
+import Post from 'components/Post';
 
 import 'components/App/lists.scss';
 
@@ -27,11 +28,7 @@ class EducationPage extends React.Component {
         </section>
 
         <section className="column-2">
-          <h2>Education</h2>
-
-          <p>A list of topics that were covered during my time at University
-          where I studied Computer Science.
-          </p>
+          <Post id="5ab759bbd1c89310cb19c3f7" />
 
           <ul className="list-regular">
             <li className="list-item">

@@ -3,6 +3,7 @@ import API from 'api';
 import { Layout } from 'components/Layouts';
 import Archive from 'containers/Archive';
 import JobItem from 'components/Items/JobItem';
+import Post from 'components/Post';
 
 class JobsPage extends React.Component {
 
@@ -25,7 +26,7 @@ class JobsPage extends React.Component {
         </section>
 
         <section className="column-2">
-          <h2>Jobs</h2>
+          <Post id="5ab75aedd1c89310cb19c3f9" />
         </section>
       </Layout>
     );

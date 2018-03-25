@@ -3,6 +3,7 @@ import API from 'api';
 import { Layout } from 'components/Layouts';
 import Archive from 'containers/Archive';
 import CertificationItem from 'components/Items/CertificationItem';
+import Post from 'components/Post';
 
 class CertificationsPage extends React.Component {
 
@@ -25,8 +26,7 @@ class CertificationsPage extends React.Component {
         </section>
 
         <section className="column-2">
-          <h2>Certifications</h2>
-          <p>A list of online certifications I have taken.</p>
+          <Post id="5ab75a39d1c89310cb19c3f8" />
         </section>
       </Layout>
     );
