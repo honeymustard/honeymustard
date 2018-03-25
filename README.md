@@ -8,9 +8,9 @@ Everyone's favorite MERN stack website.
 yarn build  # production build
 yarn serve  # run production server
 yarn start  # start development server
-yarn clean  # clean built files
+yarn clean  # clean build files
 ```
 
 ## Copyright
 
-Copyright &copy 2017-2018 Adrian Solumsmo
+Copyright &copy 2017-2018 Adrian Solumsmo.
