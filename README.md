@@ -13,4 +13,4 @@ yarn clean  # clean build files
 
 ## Copyright
 
-Copyright &copy 2017-2018 Adrian Solumsmo.
+Copyright &copy; 2017-2018 Adrian Solumsmo.
