@@ -5,7 +5,7 @@ import Archive from 'containers/Archive';
 import EducationItem from 'components/Items/EducationItem';
 import Post from 'components/Post';
 
-import 'components/App/lists.scss';
+import 'components/Lists/list.scss';
 
 class EducationPage extends React.Component {
 
