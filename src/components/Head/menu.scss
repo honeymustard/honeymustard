@@ -42,7 +42,7 @@
         height: 60px;
 
         @media #{$grid-lg-up} {
-            background-color: initial;
+            background-color: transparent;
             height: initial;
         }
     }
