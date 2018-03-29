@@ -2,7 +2,8 @@
 *.swn
 *.swm
 *.swo
-~
+*~
 /node_modules
 /dist
 secrets.js
+yarn-error.log
