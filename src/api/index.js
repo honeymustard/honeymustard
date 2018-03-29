@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 /**
  * Fetches data from routes and applies caching.
  */
