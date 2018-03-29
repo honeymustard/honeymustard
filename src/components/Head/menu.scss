@@ -43,7 +43,7 @@
 
         @media #{$grid-lg-up} {
             background-color: transparent;
-            height: initial;
+            height: auto;
         }
     }
 
@@ -78,7 +78,7 @@
         max-width: 100%;
 
         @media #{$grid-lg-up} {
-            height: initial;
+            height: auto;
             max-height: 120px;
         }
     }
