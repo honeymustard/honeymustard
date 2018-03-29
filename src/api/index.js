@@ -29,7 +29,7 @@ class API {
   }
 
   prefix(route) {
-    if (!route.startsWith('/api/')) {
+    if (route.indexOf('/api/') !== 0) {
       return `/api/${route}`;
     }
     return route;
