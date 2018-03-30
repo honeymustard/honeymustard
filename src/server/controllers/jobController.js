@@ -15,8 +15,9 @@ class JobController {
   }
 
   get(req, res) {
-    let limit = req.limit || 0;
+    let limit = parseInt(req.query.limit || 0);
 
+    console.log(limit);
     Job
       .find({})
       .sort({'startDate': -1})

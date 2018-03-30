@@ -15,7 +15,7 @@ class EducationController {
   }
 
   get(req, res) {
-    let limit = req.limit || 0;
+    let limit = parseInt(req.query.limit || 0);
 
     Education
       .find({})
