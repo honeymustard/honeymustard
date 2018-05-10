@@ -1,0 +1,24 @@
+@import 'components/App/colors.scss';
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+}
+
+@keyframes load {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.loading-bar {
+    background-color: $yellow;
+    height: 6px;
+    width: 0;
+
+    &.is-loading {
+        animation: load .8s ease-out;
+    }
+}
