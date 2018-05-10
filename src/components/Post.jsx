@@ -1,5 +1,4 @@
 import React from 'react';
-import API from 'api';
 
 class Post extends React.Component {
 
@@ -9,9 +8,9 @@ class Post extends React.Component {
   }
 
   componentDidMount() {
-    new API().get(`posts/${this.props.id}`)
-    .then(data => this.setState({post: data}))
-    .catch(error => console.log(error));
+    this.props.api.get(`posts/${this.props.id}`)
+      .then(data => this.setState({post: data}))
+      .catch(console.log);
   }
 
   render() {

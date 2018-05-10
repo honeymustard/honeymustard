@@ -8,6 +8,7 @@ class Archive extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {items: []};
   }
 
   static get defaultProps() {
@@ -16,19 +17,24 @@ class Archive extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.api.get(this.props.postType)
+      .then(data => this.setState({items: data}))
+      .catch(console.log);
+  }
+
   render() {
 
     let ListItem = this.props.component;
-    let items = this.props.items;
 
-    if (items.length === 0) {
+    if (this.state.items.length === 0) {
       return '';
     }
 
     return (
       <ul className={this.props.className}>
         {this.props.children}
-        {items.map(item =>
+        {this.state.items.map(item =>
           <ListItem key={item._id} item={item} />
         )}
       </ul>

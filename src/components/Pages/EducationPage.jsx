@@ -5,6 +5,7 @@ import Archive from 'containers/Archive';
 import EducationItem from 'components/Items/EducationItem';
 import Post from 'components/Post';
 import List from 'components/Lists/List';
+import * as APIService from 'services/APIService';
 
 class EducationPage extends React.Component {
 
@@ -64,24 +65,22 @@ class EducationPage extends React.Component {
     ];
   }
 
-  componentDidMount() {
-    new API().get('education')
-      .then(data => this.setState({items: data}))
-      .catch(error => console.log(error));
-  }
-
   render() {
     return (
-      <Layout>
-        <section className="column-1">
-          <Archive items={this.state.items} component={EducationItem} />
-        </section>
+      <APIService.Consumer>
+        {api => (
+          <Layout>
+            <section className="column-1">
+              <Archive api={api} postType="education" component={EducationItem} />
+            </section>
 
-        <section className="column-2">
-          <Post id="5ab759bbd1c89310cb19c3f7" />
-          <List items={this.items} />
-        </section>
-      </Layout>
+            <section className="column-2">
+              <Post id="5ab759bbd1c89310cb19c3f7" api={api} />
+              <List items={this.items} />
+            </section>
+          </Layout>
+        )}
+      </APIService.Consumer>
     );
   }
 }

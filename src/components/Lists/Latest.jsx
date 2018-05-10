@@ -1,5 +1,4 @@
 import React from 'react';
-import API from 'api';
 import { HashLink as Link } from 'react-router-hash-link';
 
 import './latest.scss';
@@ -18,15 +17,15 @@ class Latest extends React.Component {
 
   componentDidMount() {
 
-    new API().get('jobs?limit=1')
+    this.props.api.get('jobs?limit=1')
       .then(data => this.setState({job: data[0]}))
       .catch(error => console.log(error));
 
-    new API().get('education?limit=1')
+    this.props.api.get('education?limit=1')
       .then(data => this.setState({education: data[0]}))
       .catch(error => console.log(error));
 
-    new API().get('certifications?limit=1')
+    this.props.api.get('certifications?limit=1')
       .then(data => this.setState({certification: data[0]}))
       .catch(error => console.log(error));
   }
