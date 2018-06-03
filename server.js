@@ -2,10 +2,16 @@ var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var helmet = require('helmet');
 var MongoStore = require('connect-mongo')(session);
 var routes = require('./src/server/routes');
 var secrets = require('./secrets.js');
 var app = express();
+
+/* Helmet headers */
+app.use(helmet());
+app.use(helmet.hidePoweredBy({ setTo: 'MS-Paint'}));
+app.use(helmet.frameguard({ action: 'sameorigin' }));
 
 mongoose.connect(secrets.mongodb, {
   useMongoClient: true
@@ -31,7 +37,7 @@ app.use('/static', express.static(path.join(__dirname, '/static')));
 app.use('/dist', express.static(path.join(__dirname, '/dist')));
 
 /* Pass all requests to index */
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
