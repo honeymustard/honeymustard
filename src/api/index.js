@@ -38,7 +38,8 @@ class API {
   }
 
   get(route) {
-    let data = this.load(this.prefix(route));
+    let url = this.prefix(route);
+    let data = this.load(url);
 
     if (data) {
       return new Promise((resolve) => {
@@ -46,7 +47,7 @@ class API {
       });
     }
 
-    return this.fetch(route);
+    return this.fetch(url);
   }
 
   fetch(route) {
