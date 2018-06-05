@@ -1,6 +1,6 @@
 let express = require('express');
 let { authenticate } = require('../utils/authentication');
-let JobController = require('../controllers/jobController');
+let JobController = require('../controllers/job');
 
 let router = express.Router();
 let controller = new JobController();

@@ -1,6 +1,6 @@
 let express = require('express');
 let { authenticate } = require('../utils/authentication');
-let EducationController = require('../controllers/educationController');
+let EducationController = require('../controllers/education');
 
 let router = express.Router();
 let controller = new EducationController();

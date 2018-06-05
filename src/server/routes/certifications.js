@@ -1,6 +1,6 @@
 let express = require('express');
 let { authenticate } = require('../utils/authentication');
-let CertificationController = require('../controllers/certificationController');
+let CertificationController = require('../controllers/certification');
 
 let router = express.Router();
 let controller = new CertificationController();
