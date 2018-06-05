@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var { authenticate } = require('../utils/authentication');
-var ProjectController = new require('../controllers/projectController');
-var controller = new ProjectController();
+let express = require('express');
+let { authenticate } = require('../utils/authentication');
+let ProjectController = require('../controllers/projectController');
+
+let router = express.Router();
+let controller = new ProjectController();
 
 // Public routes
 router.get('/projects', controller.get);

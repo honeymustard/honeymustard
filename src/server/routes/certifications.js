@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var { authenticate } = require('../utils/authentication');
-var CertificationController = require('../controllers/certificationController');
-var controller = new CertificationController();
+let express = require('express');
+let { authenticate } = require('../utils/authentication');
+let CertificationController = require('../controllers/certificationController');
+
+let router = express.Router();
+let controller = new CertificationController();
 
 // Public routes
 router.get('/certifications', controller.get);

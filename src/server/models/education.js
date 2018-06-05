@@ -1,16 +1,16 @@
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-var course = new mongoose.Schema({
+let course = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
   code: String,
   tagline: String,
-  technologies: [String]
+  technologies: [String],
 });
 
-var education = new mongoose.Schema({
+let education = new mongoose.Schema({
   updatedAt: Date,
   institution: {
     type: String,
@@ -42,7 +42,7 @@ var education = new mongoose.Schema({
   },
 });
 
-education.pre('save', function (next) {
+education.pre('save', (next) => {
   this.updatedAt = Date();
   next();
 });

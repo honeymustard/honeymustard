@@ -1,10 +1,9 @@
-var getMessages = require('../utils/errors');
-var Post = require('../models/post');
+let getMessages = require('../utils/errors');
+let Post = require('../models/post');
 
 class PostController {
-
   post(req, res) {
-    var newPost = new Post(req.query);
+    let newPost = new Post(req.query);
     newPost.save((error, item) => {
       if (error) {
         res.status(500).json(getMessages(error));
@@ -15,11 +14,11 @@ class PostController {
   }
 
   get(req, res) {
-    let limit = parseInt(req.query.limit || 0);
+    let limit = parseInt(req.query.limit || 0, 10);
 
     Post
       .find({})
-      .sort({'postDate': -1})
+      .sort({ postDate: -1 })
       .limit(limit)
       .exec((error, items) => {
         if (error) {
@@ -41,7 +40,7 @@ class PostController {
   }
 
   patchByID(req, res) {
-    Post.findByIdAndUpdate(req.params.id, {$set: req.query}, {new: true}, (error, item) => {
+    Post.findByIdAndUpdate(req.params.id, { $set: req.query }, { new: true }, (error, item) => {
       if (item) {
         res.status(200).json(item);
       } else {

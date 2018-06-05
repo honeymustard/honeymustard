@@ -2,10 +2,12 @@
  * Get a simple list of errors.
  */
 function getMessages(err) {
-  var list = [];
-  for (e in err.errors) {
-    list.push(err.errors[e].message);
+  let list = [];
+
+  for (let i = 0; i < err.errors.length; i++) {
+    list.push(err.errors[i].message);
   }
+
   return list;
 }
 

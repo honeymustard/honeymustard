@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var { authenticate } = require('../utils/authentication');
-var EducationController = require('../controllers/educationController');
-var controller = new EducationController();
+let express = require('express');
+let { authenticate } = require('../utils/authentication');
+let EducationController = require('../controllers/educationController');
+
+let router = express.Router();
+let controller = new EducationController();
 
 // Public routes
 router.get('/education', controller.get);

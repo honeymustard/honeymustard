@@ -1,4 +1,4 @@
-var secrets = require('../../../secrets');
+let secrets = require('../../../secrets');
 
 /**
  * Authentication for users.
@@ -6,9 +6,9 @@ var secrets = require('../../../secrets');
 function authenticate(req, res, next) {
   if (req.session && req.session.user === secrets.user) {
     return next();
-  } else {
-    return res.sendStatus(401);
   }
+
+  return res.sendStatus(401);
 }
 
 module.exports = { authenticate };

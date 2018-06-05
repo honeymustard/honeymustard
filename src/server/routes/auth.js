@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var AuthController = require('../controllers/authController');
-var controller = new AuthController();
+let express = require('express');
+let AuthController = require('../controllers/authController');
+
+let router = express.Router();
+let controller = new AuthController();
 
 router.route('/login').post(controller.login);
 router.route('/logout').get(controller.logout);

@@ -1,11 +1,10 @@
-import "es6-promise/auto";
+import 'es6-promise/auto';
 import 'whatwg-fetch';
 
 /**
  * Fetches data from routes and applies caching.
  */
 class API {
-
   cacheTime() {
     return 24 * 60 * 60 * 1000;
   }
@@ -39,11 +38,10 @@ class API {
   }
 
   get(route) {
-    route = this.prefix(route);
-    let data = this.load(route);
+    let data = this.load(this.prefix(route));
 
     if (data) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         resolve(JSON.parse(data));
       });
     }
@@ -52,16 +50,16 @@ class API {
   }
 
   fetch(route) {
-    route = this.prefix(route);
+    let url = this.prefix(route);
 
-    return fetch(route, {
+    return fetch(url, {
       Accept: 'application/json',
     })
-    .then(resp => resp.json())
-    .then(data => {
-      this.save(data, route);
-      return data;
-    });
+      .then(resp => resp.json())
+      .then((data) => {
+        this.save(data, route);
+        return data;
+      });
   }
 }
 

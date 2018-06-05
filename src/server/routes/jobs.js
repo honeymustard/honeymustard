@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var { authenticate } = require('../utils/authentication');
-var JobController = require('../controllers/jobController');
-var controller = new JobController();
+let express = require('express');
+let { authenticate } = require('../utils/authentication');
+let JobController = require('../controllers/jobController');
+
+let router = express.Router();
+let controller = new JobController();
 
 // Public routes
 router.get('/jobs', controller.get);

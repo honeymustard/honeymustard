@@ -1,10 +1,9 @@
-var getMessages = require('../utils/errors');
-var Certification = require('../models/certification');
+let getMessages = require('../utils/errors');
+let Certification = require('../models/certification');
 
 class CertificationController {
-
   post(req, res) {
-    var newCertification = new Certification(req.query);
+    let newCertification = new Certification(req.query);
     newCertification.save((error, item) => {
       if (error) {
         res.status(500).json(getMessages(error));
@@ -15,11 +14,11 @@ class CertificationController {
   }
 
   get(req, res) {
-    let limit = parseInt(req.query.limit || 0);
+    let limit = parseInt(req.query.limit || 0, 10);
 
     Certification
       .find({})
-      .sort({'date': -1})
+      .sort({ date: -1 })
       .limit(limit)
       .exec((error, items) => {
         if (error) {
@@ -41,13 +40,18 @@ class CertificationController {
   }
 
   patchByID(req, res) {
-    Certification.findByIdAndUpdate(req.params.id, {$set: req.query}, {new: true}, (error, item) => {
-      if (item) {
-        res.status(200).json(item);
-      } else {
-        res.status(404).json('Could not find certification');
-      }
-    });
+    Certification.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.query },
+      { new: true },
+      (error, item) => {
+        if (item) {
+          res.status(200).json(item);
+        } else {
+          res.status(404).json('Could not find certification');
+        }
+      },
+    );
   }
 }
 

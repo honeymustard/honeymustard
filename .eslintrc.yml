@@ -1,0 +1,12 @@
+extends: airbnb
+globals:
+  fetch: true
+  localStorage: true
+rules:
+  prefer-const: 'off'
+  vars-on-top: 'off'
+  no-plusplus: 'off'
+  class-methods-use-this: 'off'
+  import/no-unresolved: 'never'
+  import/extensions: 'never'
+  import/prefer-default-export: 'never'

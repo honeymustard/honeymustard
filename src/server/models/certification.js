@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-var certification = new mongoose.Schema({
+let certification = new mongoose.Schema({
   updatedAt: Date,
   name: {
     type: String,
@@ -26,10 +26,10 @@ var certification = new mongoose.Schema({
   },
   certificateUrl: String,
   license: String,
-  technologies: [String]
+  technologies: [String],
 });
 
-certification.pre('save', function (next) {
+certification.pre('save', (next) => {
   this.updatedAt = Date();
   next();
 });
