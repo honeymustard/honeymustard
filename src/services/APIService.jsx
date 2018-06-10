@@ -28,9 +28,16 @@ class APIProvider extends React.Component {
   }
 
   get(route) {
+    let data = this.api.load(route);
+
+    if (data) {
+      return new Promise(resolve => resolve(data));
+    }
+
     if (!this.state.loading) {
       this.start = Date.now();
     }
+
     this.setState({loading: true});
     this.streams++;
 

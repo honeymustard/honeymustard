@@ -6,7 +6,7 @@ import 'whatwg-fetch';
  */
 class API {
   cacheTime() {
-    return 24 * 60 * 60 * 1000;
+    return 60 * 60 * 24 * 7 * 1000;
   }
 
   expired(key) {
@@ -22,7 +22,11 @@ class API {
   }
 
   load(key) {
-    return !this.expired(key) ? localStorage.getItem(key) : null;
+    if (!this.expired(key)) {
+      return JSON.parse(localStorage.getItem(key));
+    }
+
+    return null;
   }
 
   save(data, key) {
@@ -38,19 +42,6 @@ class API {
   }
 
   get(route) {
-    let url = this.prefix(route);
-    let data = this.load(url);
-
-    if (data) {
-      return new Promise((resolve) => {
-        resolve(JSON.parse(data));
-      });
-    }
-
-    return this.fetch(url);
-  }
-
-  fetch(route) {
     let url = this.prefix(route);
 
     return fetch(url, {
