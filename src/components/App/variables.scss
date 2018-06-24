@@ -1,9 +1,20 @@
-/**
- * google fonts.
- */
+// Colors
+$black: #000;
+$white: #fff;
+$blue: #07d;
+$pink: #fab;
+$dark_pink: #f59;
+$darker_pink: #f39;
+$yellow: #ff5;
+$dark_gray: #444;
+$lighter_gray: #555;
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Noto+Sans:700|Roboto:700);
+// Grid
+$grid-gutter: 20px;
+$grid-size: 1024px;
+$grid-lg-up: '(min-width: #{$grid-size})';
 
+// Fonts
 $font-sans: 'Source Sans Pro';
 $font-noto: 'Noto Sans';
 $font-roboto: 'Roboto';

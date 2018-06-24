@@ -1,3 +1,6 @@
+import 'normalize.css';
+import 'components/App/app.scss';
+
 import React from 'react';
 import Location from 'containers/Location';
 import * as APIService from 'services/APIService';
@@ -9,9 +12,6 @@ import {
   EducationPage,
   CertificationsPage
 } from 'components/Pages';
-
-import 'normalize.css';
-import 'components/App/app.scss';
 
 /**
  * The core App component.

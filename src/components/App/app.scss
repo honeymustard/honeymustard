@@ -1,11 +1,15 @@
-@import 'fonts';
-@import 'colors';
-@import 'grid';
-@import 'utils';
+@import 'components/App/variables.scss';
+@import 'components/App/utils.scss';
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Noto+Sans:700|Roboto:700);
 
 html {
     box-sizing: border-box;
     height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $pink;
 }
 
 *,
@@ -22,6 +26,7 @@ body {
     height: 100%;
     width: 100%;
     padding-top: 60px;
+    color: $white;
 
     @media #{$grid-lg-up} {
         padding: 200px 0 0;
@@ -85,4 +90,15 @@ ul {
 
 .align-right {
     @include align-right;
+}
+
+.grid-row {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    width: 100%;
+
+    @media #{$grid-lg-up} {
+      margin: 0 auto;
+      max-width: $grid-size;
+    }
 }
