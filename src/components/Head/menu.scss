@@ -37,7 +37,7 @@
     .menu-top {
         background-color: $dark_pink;
         display: flex;
-        height: 60px;
+        height: 80px;
 
         @media #{$grid-lg-up} {
             background-color: transparent;
@@ -64,15 +64,28 @@
     }
 
     .menu-col-burger {
+        background-color: $dark-pink;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        height: 100px;
+        width: 100px;
+
         @media #{$grid-lg-up} {
+            position: static;
+            background-color: initial;
             align-items: flex-end;
             padding-left: 20px;
+            padding: 0;
+            width: initial;
+            height: initial;
         }
     }
 
     .menu-logo {
         display: block;
-        height: 30px;
+        height: 40px;
         max-width: 100%;
 
         @media #{$grid-lg-up} {
@@ -83,8 +96,7 @@
 
     .menu-burger {
         background-color: transparent;
-        width: 30px;
-        height: 30px;
+        width: 100%;
         border: 0;
         outline: 0;
         padding: 0;
