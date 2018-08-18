@@ -2,7 +2,11 @@ const path = require('path');
 const prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: [
+    './node_modules/es6-promise/auto.js',
+    './node_modules/whatwg-fetch/fetch.js',
+    './src/index.jsx',
+  ],
   output: {
     publicPath: '/dist/',
     path: path.resolve(__dirname, 'dist'),
