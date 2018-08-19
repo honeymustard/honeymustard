@@ -1,13 +1,10 @@
 // Colors
-$black: #000;
+$black: #222;
 $white: #fff;
 $blue: #07d;
-$pink: #fab;
+$pink: #f8d;
 $dark_pink: #f59;
-$darker_pink: #f39;
 $yellow: #ff5;
-$dark_gray: #444;
-$lighter_gray: #555;
 
 // Grid
 $grid-gutter: 20px;
@@ -17,7 +14,6 @@ $grid-lg-up: '(min-width: #{$grid-size})';
 // Fonts
 $font-sans: 'Source Sans Pro';
 $font-noto: 'Noto Sans';
-$font-roboto: 'Roboto';
 
 @mixin font-size($size) {
     font-size: $size + 0px;
@@ -34,13 +30,6 @@ $font-roboto: 'Roboto';
 @mixin font-header {
     font-family: $font-noto, sans-serif;
     font-size: 26px;
-    font-weight: normal;
+    font-weight: 700;
     line-height: 30px;
-}
-
-@mixin font-sub-header {
-    font-family: $font-roboto, sans-serif;
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 28px;
 }

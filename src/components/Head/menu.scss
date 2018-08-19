@@ -118,17 +118,11 @@
         .burger-patty,
         .anti-burger-line {
             fill: $yellow;
-            transition: fill .3s;
         }
 
         &:hover,
         &:focus {
             cursor: pointer;
-
-            .burger-patty,
-            .anti-burger-line {
-                fill: $black;
-            }
         }
     }
 
@@ -139,31 +133,34 @@
 
     .menu-list {
         list-style-type: none;
-        margin: 20px 0;
+        margin: 40px 0 0;
         padding: 0;
         width: 100%;
 
         @media #{$grid-lg-up} {
-            margin: 60px 0;
+            text-align: center;
+            margin: 80px 0 0;
         }
     }
 
     .menu-item {
-        margin: 0 0 15px;
+        margin: 0 0 25px;
 
         @media #{$grid-lg-up} {
-            margin: 0 0 20px;
+            margin: 0 0 40px;
         }
 
         a {
             @include font-header;
-            font-size: 28px;
+            font-size: 32px;
             line-height: 1.2;
             float: none;
             display: inline-block;
+            letter-spacing: 1px;
 
             @media #{$grid-lg-up} {
-                font-size: 36px;
+                font-size: 50px;
+                letter-spacing: 2px;
             }
         }
     }
