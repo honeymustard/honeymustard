@@ -3,17 +3,18 @@
 .head {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    min-height: 60px;
+    height: 80px;
     z-index: 100;
-    transition: background-color .8s;
+    background-color: $dark_pink;
 
     @media #{$grid-lg-up} {
+        background-color: $blue;
         display: block;
-        min-height: 200px;
+        height: 200px;
     }
 
     &.is-visible {
@@ -23,8 +24,101 @@
         left: 0;
         bottom: 0;
     }
+}
 
-    &.is-open {
-        background-color: $dark_pink;
+.head-top {
+    display: flex;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 110;
+
+    @media #{$grid-lg-up} {
+        height: 200px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.head-row {
+    display: flex;
+    flex-grow: 1;
+}
+
+.head-col {
+    display: flex;
+    align-items: center;
+}
+
+.head-col-logo {
+    flex-grow: 1;
+
+    a {
+        display: block;
+    }
+}
+
+.head-col-burger {
+    background-color: $dark-pink;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+
+    @media #{$grid-lg-up} {
+        position: static;
+        background-color: initial;
+        align-items: flex-end;
+        padding-left: 20px;
+        padding: 0;
+        width: initial;
+        height: initial;
+    }
+}
+
+.head-logo {
+    display: block;
+    height: 40px;
+    max-width: 100%;
+
+    @media #{$grid-lg-up} {
+        height: auto;
+        max-height: 120px;
+    }
+}
+
+.head-burger {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    display: block;
+    user-select: none;
+
+    @media #{$grid-lg-up} {
+        width: 75px;
+        height: 75px;
+        position: relative;
+        top: 3px;
+    }
+
+    .burger,
+    .anti-burger {
+        width: 100%;
+    }
+
+    .burger-patty,
+    .anti-burger-line {
+        fill: $yellow;
+    }
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
     }
 }

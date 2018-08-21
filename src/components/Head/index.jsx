@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from 'components/Head/Logo';
 import Menu from 'components/Head/Menu';
 
 import 'components/Head/head.scss';
@@ -28,12 +29,16 @@ class Head extends React.Component {
   }
 
   close() {
+    if (this.state.toggling) return;
+
     this.setState({
       open: false,
       toggling: true,
     });
 
     setTimeout(() => {
+      document.body.classList.remove('menu-active');
+
       this.setState({
         visible: false,
         trans: 'fade-in',
@@ -43,6 +48,8 @@ class Head extends React.Component {
   }
 
   open() {
+    if (this.state.toggling) return;
+
     this.setState({
       trans: 'fade-in',
       visible: true,
@@ -56,6 +63,7 @@ class Head extends React.Component {
     }, 100);
 
     setTimeout(() => {
+      document.body.classList.add('menu-active');
       this.setState({
         trans: 'fade-out',
         toggling: false,
@@ -74,13 +82,14 @@ class Head extends React.Component {
       this.state.visible ? 'is-visible' : '',
       this.state.open ? 'is-open' : '',
       this.state.trans,
-    ].join(' ');
+    ].filter(e => e !== '').join(' ');
   }
 
   render() {
     return (
-      <header className={`head ${this.classes()}`} onKeyUp={this.keyUp.bind(this)}>
-        <Menu classes={this.classes()} open={this.state.open} toggle={this.toggle.bind(this)} />
+      <header className="head" onKeyUp={this.keyUp.bind(this)}>
+        <Logo open={this.state.open} toggle={this.toggle.bind(this)} />
+        <Menu classes={this.classes()} toggle={this.toggle.bind(this)} />
       </header>
     );
   }

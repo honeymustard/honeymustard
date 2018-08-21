@@ -26,6 +26,14 @@ body {
     padding-top: 80px;
     color: $white;
 
+    &.menu-active {
+        overflow: hidden;
+
+        @media #{$grid-lg-up} {
+            overflow: visible;
+        }
+    }
+
     @media #{$grid-lg-up} {
         padding: 200px 0 0;
     }
