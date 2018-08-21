@@ -8,22 +8,23 @@
     left: 0;
     right: 0;
     min-height: 60px;
+    z-index: 100;
+    transition: background-color .8s;
 
     @media #{$grid-lg-up} {
         display: block;
         min-height: 200px;
     }
 
-    &.has-trans {
-        transition: background-color .3s;
-    }
-
-    &.is-open {
-        background-color: $dark_pink;
+    &.is-visible {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         bottom: 0;
+    }
+
+    &.is-open {
+        background-color: $dark_pink;
     }
 }

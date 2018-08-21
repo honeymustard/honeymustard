@@ -25,14 +25,6 @@ class Menu extends React.Component {
     };
   }
 
-  classes() {
-    return [
-      'menu',
-      this.props.open ? 'has-trans' : '',
-      this.props.open ? 'is-open' : '',
-    ].join(' ');
-  }
-
   toggle() {
     this.props.toggle();
     this.button.blur();
@@ -46,7 +38,7 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <nav className={this.classes()}>
+      <nav className={`menu ${this.props.classes}`}>
         <div className="grid-row menu-row menu-top">
           <div className="menu-col menu-col-logo">
             <Link to="/">
@@ -77,8 +69,8 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-  open: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
+  classes: PropTypes.string.isRequired,
 };
 
 export default withRouter(Menu);

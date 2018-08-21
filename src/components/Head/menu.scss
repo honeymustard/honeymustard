@@ -6,15 +6,28 @@
     left: 0;
     right: 0;
 
-    &.has-trans {
+    &.fade-in {
         .menu-links {
             transition: opacity 1s;
+            transition-delay: .4s;
+        }
+    }
+
+    &.fade-out {
+        .menu-links {
+            transition: opacity .6s;
+            transition-delay: 0s;
+        }
+    }
+
+    &.is-visible {
+        .menu-links {
+            display: block;
         }
     }
 
     &.is-open {
         .menu-links {
-            display: block;
             opacity: 1;
         }
     }

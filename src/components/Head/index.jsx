@@ -9,16 +9,58 @@ class Head extends React.Component {
     super(props);
 
     this.state = {
-      open: false
+      open: false,
+      visible: false,
+      trans: 'fade-in',
+      toggling: false,
     };
   }
 
   toggle() {
-    this.setState({open: !this.state.open});
+    if (this.state.toggling) return;
+
+    if (this.state.open) {
+      this.close();
+    }
+    else {
+      this.open();
+    }
   }
 
   close() {
-    this.setState({open: false});
+    this.setState({
+      open: false,
+      toggling: true,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        visible: false,
+        trans: 'fade-in',
+        toggling: false,
+      });
+    }, 600);
+  }
+
+  open() {
+    this.setState({
+      trans: 'fade-in',
+      visible: true,
+      toggling: true,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        open: true,
+      });
+    }, 100);
+
+    setTimeout(() => {
+      this.setState({
+        trans: 'fade-out',
+        toggling: false,
+      });
+    }, 1000);
   }
 
   keyUp(e) {
@@ -29,16 +71,16 @@ class Head extends React.Component {
 
   classes() {
     return [
-      'head',
-      this.state.open ? 'has-trans' : '',
-      this.state.open ? 'is-open' : ''
+      this.state.visible ? 'is-visible' : '',
+      this.state.open ? 'is-open' : '',
+      this.state.trans,
     ].join(' ');
   }
 
   render() {
     return (
-      <header className={this.classes()} onKeyUp={this.keyUp.bind(this)}>
-        <Menu open={this.state.open} toggle={this.toggle.bind(this)} />
+      <header className={`head ${this.classes()}`} onKeyUp={this.keyUp.bind(this)}>
+        <Menu classes={this.classes()} open={this.state.open} toggle={this.toggle.bind(this)} />
       </header>
     );
   }
