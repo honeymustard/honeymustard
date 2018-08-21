@@ -1,0 +1,27 @@
+@import 'components/App/variables';
+
+.icon-dn {
+    position: relative;
+    display: block;
+    fill: #f1f1f1;
+    max-width: 80%;
+    top: -9px;
+
+    @media #{$grid-lg-up} {
+        top: -7px;
+    }
+}
+
+.icon-dekode {
+    fill: #262626;
+    position: relative;
+    display: block;
+    max-width: 60%;
+    left: 10px;
+    top: -3px;
+
+    @media #{$grid-lg-up} {
+        left: 19px;
+        max-width: 50%;
+    }
+}

@@ -9,6 +9,38 @@
     }
 }
 
+.list-item-head {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 20px;
+}
+
+.list-item-image {
+    display: flex;
+    margin-right: 10px;
+    min-width: 80px;
+    min-height: 80px;
+
+    @media #{$grid-lg-up} {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.list-item-cont {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .list-item-date {
     @include font-normal;
     display: block;
