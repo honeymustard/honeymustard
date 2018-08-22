@@ -9,6 +9,8 @@ class Head extends React.Component {
   constructor(props) {
     super(props);
 
+    this.unmounted = false;
+
     this.state = {
       open: false,
       visible: false,
@@ -39,7 +41,7 @@ class Head extends React.Component {
     setTimeout(() => {
       document.body.classList.remove('menu-active');
 
-      this.setState({
+      !this.unmounted && this.setState({
         visible: false,
         trans: 'fade-in',
         toggling: false,
@@ -64,7 +66,7 @@ class Head extends React.Component {
 
     setTimeout(() => {
       document.body.classList.add('menu-active');
-      this.setState({
+      !this.unmounted && this.setState({
         trans: 'fade-out',
         toggling: false,
       });
@@ -83,6 +85,10 @@ class Head extends React.Component {
       this.state.open ? 'is-open' : '',
       this.state.trans,
     ].filter(e => e !== '').join(' ');
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true;
   }
 
   render() {

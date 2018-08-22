@@ -17,11 +17,13 @@ const JobIcon = ({ name }) => {
 const JobItem = ({item}) => (
   <li className="list-item" key={item._id} name={item.slug}>
     <div className="list-item-head">
+      {/*
       <div className="list-item-image">
         <a target="_blank" href={item.url}>
           <JobIcon name={item.slug} />
         </a>
       </div>
+      */}
       <div className="list-item-cont">
         <h3 className="list-item-title">
           <a target="_blank" href={item.url}>
